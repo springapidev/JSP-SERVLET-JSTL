@@ -16,5 +16,12 @@
         <%
             response.sendRedirect("http://www.coderbd.com");
         %>  
+        <!--
+        In JSP, response is an implicit object of type HttpServletResponse. The instance of HttpServletResponse is created by the web container for each jsp request.
+
+It can be used to add or manipulate response such as redirect response to another resource, send error etc.
+
+Let's see the example of response implicit object where we are redirecting the response to the Google.
+        -->
     </body>
 </html>
