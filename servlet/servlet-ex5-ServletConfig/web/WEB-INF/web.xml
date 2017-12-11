@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>NewServlet1</servlet-name>
+        <servlet-class>com.coderbd.NewServlet1</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServletAll</servlet-name>
+        <servlet-class>com.coderbd.NewServletAll</servlet-class>
+        
+        <init-param>  
+            <param-name>username</param-name>  
+            <param-value>admin</param-value>  
+        </init-param>  
+  
+        <init-param>  
+            <param-name>password</param-name>  
+            <param-value>123456</param-value>  
+        </init-param>  
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewServlet1</servlet-name>
+        <url-pattern>/NewServlet1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServletAll</servlet-name>
+        <url-pattern>/NewServletAll</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <init-param>
+        <param-name>parametername</param-name>
+        <param-value>parametervalue</param-value>
+    </init-param>
+</web-app>
