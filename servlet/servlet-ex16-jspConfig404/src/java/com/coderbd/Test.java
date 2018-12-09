@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.coderbd;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Rajail Islam
+ * @author User
  */
-public class NewServletAll extends HttpServlet {
+public class Test extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +30,10 @@ public class NewServletAll extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServletAll</title>");            
+            out.println("<title>Servlet Test</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewServletAll at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Test at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,21 +51,7 @@ public class NewServletAll extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");  
-    PrintWriter out = response.getWriter();  
-      
-    ServletConfig config=getServletConfig();  
-    Enumeration<String> e=config.getInitParameterNames();  
-          
-    String str="";  
-    while(e.hasMoreElements()){  
-    str=e.nextElement();  
-    out.print("<br>Name: "+str+"<br/>");  
-    out.print(" value: "+config.getInitParameter(str));  
-    }  
-          
-    out.close();  
-     //   processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**

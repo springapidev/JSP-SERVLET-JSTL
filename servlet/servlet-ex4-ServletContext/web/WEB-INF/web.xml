@@ -24,6 +24,10 @@
         <param-name>dname</param-name>
         <param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
     </context-param>
+     <context-param>
+        <param-name>ok</param-name>
+        <param-value>hihi</param-value>
+    </context-param>
     <context-param>
         <param-name>username</param-name>
         <param-value>admin</param-value>

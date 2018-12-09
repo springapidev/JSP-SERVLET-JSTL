@@ -67,7 +67,7 @@ public class GetAllinitializationParameters extends HttpServlet {
         String str = "";
         while (e.hasMoreElements()) {
             str = e.nextElement();
-            out.print("<br> " + context.getInitParameter(str));
+            out.print("<br> =: " + context.getInitParameter(str));
         }
 
         processRequest(request, response);
