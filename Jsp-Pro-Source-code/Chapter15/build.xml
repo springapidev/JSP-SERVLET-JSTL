@@ -1,0 +1,58 @@
+<project name="ProJSP_Ch15" default="build-war">
+  
+  <property file="ant.properties"/>
+  <property file="../tomcat.properties"/>
+
+  <taskdef file="../tomcat-task.properties">
+    <classpath>
+        <pathelement path="../catalina-ant/catalina-ant.jar"/>
+    </classpath>
+  </taskdef>
+
+	<!-- *************************************************** -->
+
+	<target name="build-war">		
+    <mkdir dir="./build/WEB-INF"/>
+    <mkdir dir="./war"/>
+
+		<copy todir="./build">
+			<fileset dir=".">
+				<include name="WEB-INF/**/*"/>
+				<include name="*.html"/>
+			</fileset>
+			<fileset dir="../stylesheet">
+				<include name="*.css"/>
+			</fileset>
+		</copy>
+		
+		<jar destfile="war/${webapp.name}.war" basedir="./build"/>			
+	</target>
+
+	<target name="undeploy" >
+      <undeploy url="${tomcat.manager.url}"
+                username="${tomcat.username}"
+                password="${tomcat.password}"
+                path="/${webapp.name}"
+                failOnError="false"/>
+    </target>    
+	
+	<target name="deploy" depends="cleanall,undeploy,build-war">
+	    <deploy url="${tomcat.manager.url}"
+	            username="${tomcat.username}"
+	            password="${tomcat.password}"
+	            path="/${webapp.name}"
+              war="${basedir}/war/${webapp.name}.war"/>
+    </target>    
+	
+	<target name="clean">
+		<delete quiet="true" dir="./build"/>
+		<delete quiet="true" dir="./war"/>
+	</target>
+
+	<target name="cleanall" depends="clean">
+		<delete quiet="true">
+          <fileset dir="./WEB-INF/classes" includes="**/*.class"/>
+	    </delete>
+	</target>
+		
+</project>

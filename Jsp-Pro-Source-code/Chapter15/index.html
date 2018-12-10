@@ -1,0 +1,116 @@
+<html>
+    <head>
+      <title>Professional JSP 2, 4th Edition</title>
+      <link rel="stylesheet" href="projsp.css">
+    </head>
+    <body>
+        <h2>Chapter 15 Struts</h2>
+
+				<p>The struts example from Chapter 15 has its own separate
+				download. This page lists the steps needed to download, install
+				and run the example on your system.</p>
+				
+				<h3>Using the bin distribution</h3>
+				<ul>
+				<li>Download <a href="http://sourceforge.net/project/showfiles.php?group_id=49385&package_id=75509">struts-resume</a>
+				bin distribution.</li>
+				<li>Download <a href="http://sourceforge.net/project/showfiles.php?group_id=49385&package_id=75509">tomcat-5-jars</a>.
+				(Assuming you are using Tomcat. You may need these jars for other
+				servers, as well.)</li>
+				<li>Unpack the struts-resume zip file to a directory of your choosing</li>
+				<li>Unpack the tomcat-5-jars jar file and copy the three jar files
+				to the Tomcat common/lib directory.</li>
+				<li>The struts-resume application uses MySQL as its database. If
+				not already running, start your MySQL server. </li>
+				<li>If you used MySQL for any of the examples in Chapter 9, you
+				already have a copy of the MySQL JDBC driver library. If not,
+				download the <a href="http://www.mysql.com/products/connector/j/">Connector/J</a>
+				driver library. Copy the driver JAR file to the Tomcat common/lib
+				directory.</li>
+				<li>Login to the server as the root user. To make the next step
+				easier, run the MySQL client (mysql) from the same directory
+				where you unpacked the struts-resume zip file.</li>
+				<li>Use the resume.sql script to initialize the database.
+				This can be done by executing the command 'source resume.sql'
+				from the mysql command line.</li>
+				<li>Log out of MySQL by quitting the MySQL client</li>
+				<li>Verify you can login to the new database by executing
+        "mysql -u test -p resume". The password will be "test". After
+        logging in, you can verify that data was loaded into the tables
+        by executing 'show tables' to list the tables, and executing
+        'select * from table_name' with various table names to view
+        the data. Quit the MySQL client.</li>
+				<li>Copy the struts-resume.war file to the Tomcat webapps
+				directory.</li>
+				<li>If Tomcat is running, it should deploy the application. If
+				Tomcat is not running, Tomcat will deploy the application when
+				you start Tomcat.</li>
+				<li>Open a browser and access the struts-resume application
+				with the URL <a href="http://localhost:8080/struts-resume">http://localhost:8080/struts-resume</a></li>
+				<li>If you want to view an existing resume, login with the
+				username/password tomcat/tomcat. Otherwise, use the Signup link
+				near the bottom of the login screen to create a new account.</li>
+				</ul>
+
+				<h3>Using the src distribution</h3>
+				<ul>
+				<li>Download <a href="http://sourceforge.net/project/showfiles.php?group_id=49385&package_id=75509">struts-resume</a>
+				src distribution.</li>
+				<li>Unpack the struts-resume zip file to a directory of your choosing</li>
+				<li>Download <a href="http://sourceforge.net/project/showfiles.php?group_id=49385&package_id=75509">tomcat-5-jars</a>.
+				(Assuming you are using Tomcat. You may need these jars for other
+				servers, as well.)</li>
+				<li>Unpack the tomcat-5-jars jar file and copy the three jar files
+				to the Tomcat common/lib directory.</li>
+				<li>Download the Tomcat <a href="http://tomcat.apache.org/download-55.cgi">deployer</a> 
+				application. Unpack it and copy catalina-ant.jar to the ant lib 
+				directory. (If you are using Tomcat 5.0, find and use the 
+				appropriate download for your version of Tomcat.)</li>
+				<li>Download Sun's Java EE SDK (unless you already have a copy)
+				and copy j2ee.jar to the struts-resume lib\j2sdkee1.4\lib
+				directory</li>
+				<li>Run the ant task setup-db.</li>
+				<li>Verify you can login to the new database by executing
+        "mysql -u test -p resume". The password will be "test". After
+        logging in, you can verify that data was loaded into the tables
+        by executing 'show tables' to list the tables, and executing
+        'select * from table_name' with various table names to view
+        the data. Quit the MySQL client.</li>
+				<li>Copy the struts-resume test/applicationContext-database.xml
+				file to the struts-resume directory. (Or, if you are using 
+				Linux/solaris/Unix, create a link to the file)</li>
+				<li>Copy the struts-resume src/dao/org/appfuse/persistence/hibernate/applicationContext-hibernate.xml
+				file to the struts-resume directory. (Or, if you are using 
+				Linux/solaris/Unix, create a link to the file)</li>
+				<li>Copy the struts-resume src/service/org/appfuse/service/applicationContext-service.xml
+				file to the struts-resume directory. (Or, if you are using 
+				Linux/solaris/Unix, create a link to the file)</li>
+				<li>You can test that the db access code works by running 'ant 
+				test-dao -Dtestcase=UserDAOTest' and 'ant test-service 
+				-Dtestcase=UserManagerTest'
+				</li>
+				<li>Ensure that the CATALINA_HOME env variable is set to the
+				correct location of the Tomcat installation.</li>
+				<li>Compile and deploy the application using 'ant setup-tomcat
+				deploy'. If you are using JDK 1.5, you will need to modify the
+				build.xml file or the RequestUtil.java file. This source file
+				uses 'enum' as a variable name, and 'enum' is reserved in 
+				JDK 1.5. Rename 'enum' in the source file, to compile with
+				JDK 1.4.</li>
+				<li>The previous step creates a file named 'struts-resume.xml'
+				and copies it to the Tomcat webapps directory. Find this file
+				and move it to the Tomcat conf/Catalina/localhost directory.</li>
+				<li>The setup and deploy step also copies a MySQL JDBC driver
+				library to Tomcat common/lib. If you already have a newer version
+				of the MySQL JDBC driver, you can delete the older JAR file
+				mysql-connector-java-3.0.11-stable-bin.jar.</li>
+				<li>Restart Tomcat, or using the Tomcat Manager Application,
+				reload struts-resume.</li>
+				<li>Open a browser and access the struts-resume application
+				with the URL <a href="http://localhost:8080/struts-resume">http://localhost:8080/struts-resume</a></li>
+				<li>If you want to view an existing resume, login with the
+				username/password tomcat/tomcat. Otherwise, use the Signup link
+				near the bottom of the login screen to create a new account.</li>
+				</ul>
+    </body>
+</html>

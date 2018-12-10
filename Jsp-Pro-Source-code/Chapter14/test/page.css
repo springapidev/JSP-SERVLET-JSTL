@@ -1,0 +1,50 @@
+body, p, table, thead, tbody {
+  font-family: verdana, arial, helvetica;
+  font-size: 8pt;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left
+}
+
+h1 {
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+a:link, a:visited, a:active {
+  color: #000000;
+}
+
+.pass {
+  color: 00CC00;
+}
+
+.warning {
+  color: FF9900;
+}
+
+.fail {
+  color: #CC0000;
+}
+
+.error {
+  color: #CC0000;
+}
+
+.message {
+  font-size: 8pt;
+}
+
+.banner {
+  font-size: 8pt;
+  border-top: solid black 2px;
+  border-right: solid black 2px;
+  border-bottom: solid black 2px;
+  border-left: solid black 2px;
+  color: white;
+}

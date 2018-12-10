@@ -1,0 +1,134 @@
+<project name="ProJSP" default="build-all">
+    
+  <property file="tomcat.properties"/>
+
+	<taskdef file="tomcat-task.properties">
+		<classpath>
+      <pathelement path="catalina-ant/catalina-ant.jar"/>
+    </classpath>
+  </taskdef>
+
+    <!-- *************************************************** -->
+
+    <!-- Stage web application for WAR format in ./build -->
+    <target name="build-all">
+    	<ant dir="Chapter01" target="build-war"/>
+    	<ant dir="Chapter02/basic" target="build-war"/>
+    	<ant dir="Chapter02/store" target="build-war"/>
+     	<ant dir="Chapter03" target="build-war"/>
+     	<ant dir="Chapter04" target="build-war"/>
+    	<ant dir="Chapter05/Jsf01" target="build-war"/>
+    	<ant dir="Chapter05/Jsf02" target="build-war"/>
+     	<ant dir="Chapter05/Jsf03" target="build-war"/>
+     	<ant dir="Chapter05/Jsf04" target="build-war"/>
+     	<ant dir="Chapter05/Jsf05" target="build-war"/>
+    	<ant dir="Chapter05/Jsf06" target="build-war"/>
+     	<ant dir="Chapter06" target="build-war"/>
+     	<ant dir="Chapter07" target="build-war"/>
+     	<ant dir="Chapter08" target="build-war"/>
+     	<ant dir="Chapter09" target="build-war"/>
+     	<ant dir="Chapter10" target="build-war"/>
+     	<ant dir="Chapter11" target="build-war"/> 
+     	<ant dir="Chapter12/Sec01" target="build-war"/> 
+     	<ant dir="Chapter12/Sec02" target="build-war"/> 
+     	<ant dir="Chapter12/Sec03" target="build-war"/> 
+     	<ant dir="Chapter12/Sec04" target="build-war"/> 
+     	<ant dir="Chapter12/Sec05" target="build-war"/> 
+     	<ant dir="Chapter12/Sec06" target="build-war"/> 
+     	<ant dir="Chapter13" target="build-war"/>
+     	<ant dir="Chapter14" target="build-war"/> 
+     	<ant dir="Chapter14_cactus" target="build-war"/> 
+     	<ant dir="Chapter15" target="build-war"/> 
+    </target>
+
+		<target name="undeploy-all" >
+    	<ant dir="Chapter01" target="undeploy"/>
+      <ant dir="Chapter02/basic" target="undeploy"/>
+      <ant dir="Chapter02/store" target="undeploy"/>
+     	<ant dir="Chapter03" target="undeploy"/>
+			<ant dir="Chapter04" target="undeploy"/>
+      <ant dir="Chapter05/Jsf01" target="undeploy"/>
+    	<ant dir="Chapter05/Jsf02" target="undeploy"/>
+     	<ant dir="Chapter05/Jsf03" target="undeploy"/>
+     	<ant dir="Chapter05/Jsf04" target="undeploy"/>
+     	<ant dir="Chapter05/Jsf05" target="undeploy"/>
+  		<ant dir="Chapter05/Jsf06" target="undeploy"/>
+     	<ant dir="Chapter06" target="undeploy"/>
+			<ant dir="Chapter07" target="undeploy"/>
+     	<ant dir="Chapter08" target="undeploy"/>
+     	<ant dir="Chapter09" target="undeploy"/>
+     	<ant dir="Chapter10" target="undeploy"/>
+     	<ant dir="Chapter11" target="undeploy"/> 
+     	<ant dir="Chapter12/Sec01" target="undeploy"/> 
+     	<ant dir="Chapter12/Sec02" target="undeploy"/> 
+		 	<ant dir="Chapter12/Sec03" target="undeploy"/> 
+  		<ant dir="Chapter12/Sec04" target="undeploy"/> 
+	  	<ant dir="Chapter12/Sec05" target="undeploy"/> 
+  		<ant dir="Chapter12/Sec06" target="undeploy"/> 
+     	<ant dir="Chapter13" target="undeploy"/>
+     	<ant dir="Chapter14" target="undeploy"/> 
+     	<ant dir="Chapter14_cactus" target="undeploy"/> 
+     	<ant dir="Chapter15" target="undeploy"/> 
+    </target>    
+	
+		<target name="deploy-all">
+    	<ant dir="Chapter01" target="deploy"/>
+    	<ant dir="Chapter02/basic" target="deploy"/>
+    	<ant dir="Chapter02/store" target="deploy"/>
+     	<ant dir="Chapter03" target="deploy"/>
+			<ant dir="Chapter04" target="deploy"/>
+			<ant dir="Chapter05/Jsf01" target="deploy"/>
+    	<ant dir="Chapter05/Jsf02" target="deploy"/>
+     	<ant dir="Chapter05/Jsf03" target="deploy"/>
+     	<ant dir="Chapter05/Jsf04" target="deploy"/>
+     	<ant dir="Chapter05/Jsf05" target="deploy"/>
+    	<ant dir="Chapter05/Jsf06" target="deploy"/>
+     	<ant dir="Chapter06" target="deploy"/>
+			<ant dir="Chapter07" target="deploy"/>
+     	<ant dir="Chapter08" target="deploy"/>
+     	<ant dir="Chapter09" target="deploy"/>
+     	<ant dir="Chapter10" target="deploy"/>
+     	<ant dir="Chapter11" target="deploy"/> 
+     	<ant dir="Chapter12/Sec01" target="deploy"/> 
+     	<ant dir="Chapter12/Sec02" target="deploy"/> 
+		 	<ant dir="Chapter12/Sec03" target="deploy"/> 
+<!-- 			<ant dir="Chapter12/Sec04" target="deploy"/> -->
+	   	<ant dir="Chapter12/Sec05" target="deploy"/> 
+			<ant dir="Chapter12/Sec06" target="deploy"/> 
+     	<ant dir="Chapter13" target="deploy"/>
+     	<ant dir="Chapter14" target="deploy"/> 
+     	<ant dir="Chapter14_cactus" target="deploy"/> 
+     	<ant dir="Chapter15" target="deploy"/> 
+    </target>    
+
+    <target name="clean-all" >
+    	<ant dir="Chapter01" target="cleanall"/>
+    	<ant dir="Chapter02/basic" target="cleanall"/>
+    	<ant dir="Chapter02/store" target="cleanall"/>
+     	<ant dir="Chapter03" target="cleanall"/>
+    	<ant dir="Chapter04" target="cleanall"/>
+			<ant dir="Chapter05/Jsf01" target="cleanall"/>
+    	<ant dir="Chapter05/Jsf02" target="cleanall"/>
+     	<ant dir="Chapter05/Jsf03" target="cleanall"/>
+     	<ant dir="Chapter05/Jsf04" target="cleanall"/>
+     	<ant dir="Chapter05/Jsf05" target="cleanall"/>
+    	<ant dir="Chapter05/Jsf06" target="cleanall"/>
+     	<ant dir="Chapter06" target="cleanall"/>
+			<ant dir="Chapter07" target="cleanall"/>
+     	<ant dir="Chapter08" target="cleanall"/>
+     	<ant dir="Chapter09" target="cleanall"/>
+     	<ant dir="Chapter10" target="cleanall"/>
+     	<ant dir="Chapter11" target="cleanall"/> 
+     	<ant dir="Chapter12/Sec01" target="clean"/> 
+     	<ant dir="Chapter12/Sec02" target="clean"/> 
+		 	<ant dir="Chapter12/Sec03" target="clean"/> 
+ 			<ant dir="Chapter12/Sec04" target="clean"/> 
+	   	<ant dir="Chapter12/Sec05" target="clean"/> 
+			<ant dir="Chapter12/Sec06" target="cleanall"/> 
+     	<ant dir="Chapter13" target="cleanall"/>
+     	<ant dir="Chapter14" target="cleanall"/> 
+     	<ant dir="Chapter14_cactus" target="cleanall"/> 
+     	<ant dir="Chapter15" target="cleanall"/> 
+    </target>
+        
+</project>

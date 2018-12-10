@@ -7,8 +7,9 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <!--Jsp scriptlet tag-->
+        <!--Jsp  declaration tag-->
          <%!  int x=10; %> 
+           <!--Jsp  Expression tag-->
         <%=   "Welcome to JSP"+x%>   
         
         <%=   "Name: " + request.getParameter("n")%>     

@@ -1,0 +1,96 @@
+<project name="ProJSP_Ch12_Sec03" default="build-war">
+	
+	<property file="ant.properties"/>
+    <property file="../../tomcat.properties"/>
+
+	<taskdef file="../../tomcat-task.properties">
+      <classpath>
+        <pathelement path="../../catalina-ant/catalina-ant.jar"/>
+      </classpath>
+    </taskdef>
+
+	<!-- *************************************************** -->
+
+  <path id="jdbcdriver.path">
+    <path location="../../hsqldb/hsqldb.jar"/> 
+  </path>
+  
+  <!-- *************************************************** -->
+
+	<!-- Stage web application for WAR format in ./build -->
+	<target name="build-war" depends="clean">		
+        <mkdir dir="./build/WEB-INF"/>
+        <mkdir dir="./war"/>
+
+		<copy todir="./build">
+			<fileset dir=".">
+				<include name="*.jsp"/>
+				<include name="*.sql"/>
+				<include name="WEB-INF/**/*"/>
+				<include name="jdbc/**/*"/>
+			</fileset>
+			<fileset dir="../../stylesheet">
+				<include name="*.css"/>
+			</fileset>
+		</copy>	
+
+		<copy tofile="build/META-INF/context.xml"
+			    file="META-INF/context.xml.${database.engine}" />
+
+		<jar destfile="./war/${webapp.name}.war" basedir="./build"/>			
+	</target>
+
+	<target name="undeploy" >
+      <undeploy url="${tomcat.manager.url}"
+                username="${tomcat.username}"
+                password="${tomcat.password}"
+                path="/${webapp.name}"
+                failOnError="false"/>
+    </target>    
+	
+	<target name="deploy" depends="undeploy,build-war">
+	    <deploy url="${tomcat.manager.url}"
+	            username="${tomcat.username}"
+	            password="${tomcat.password}"
+	            path="/${webapp.name}"
+                war="${basedir}/war/${webapp.name}.war"/>
+    </target>    
+
+	<target name="clean">
+		<delete quiet="true" dir="./build"/>
+		<delete quiet="true" dir="./war"/>
+	</target>
+
+  <!-- Start HSQL database running against Ag database -->
+  <target name="start-hsql">      
+    <java classname="org.hsqldb.Server" fork="yes" dir="./data">
+      <classpath>
+        <path refid="jdbcdriver.path" />
+      </classpath>
+    </java>
+    </target>
+
+  <!-- Start HSQL database running against Ag database -->
+  <target name="stop-hsql">      
+  	<sql driver="org.hsqldb.jdbcDriver"
+  	     url="jdbc:hsqldb:hsql://localhost"
+  	     userid="sa"
+  	     password="">
+      <classpath>
+        <path refid="jdbcdriver.path" />
+      </classpath>
+      SHUTDOWN
+  	</sql>
+  </target>
+
+  <!-- Start HSQL database manager -->
+  <target name="start-hsql-manager">      
+    <java classname="org.hsqldb.util.DatabaseManager" 
+      fork="yes" dir="./data">
+      <classpath>
+        <path refid="jdbcdriver.path" />
+      </classpath>
+    </java>
+    </target>
+
+</project>

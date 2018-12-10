@@ -1,0 +1,6 @@
+<Context path="/ProJSP_Ch12_Sec05" docBase="ProJSP_Ch12_Sec05" debug="99">
+  <Realm className="org.apache.catalina.realm.JAASRealm" debug="99"
+         appName="NTLogin"
+         userClassNames="com.tagish.auth.win32.typed.NTUserPrincipal"
+         roleClassNames="com.tagish.auth.win32.typed.NTGroupPrincipal" />
+</Context>

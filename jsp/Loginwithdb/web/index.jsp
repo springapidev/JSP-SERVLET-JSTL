@@ -7,7 +7,7 @@
     <body>
         <h1>Login Page</h1>
         <center>
-            <h2>Signup Details</h2>
+            <h2>Login Details</h2>
             <form action="loginCheck.jsp" method="post">
             <br/>Username:<input type="text" name="username">
             <br/>Password:<input type="password" name="password">

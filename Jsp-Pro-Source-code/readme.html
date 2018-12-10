@@ -1,0 +1,243 @@
+<html>
+  <head>
+    <title>Professional JSP 2, 4th Edition</title>
+    <link rel="stylesheet" href="projsp.css">
+  </head>
+  <body>
+		<h1>Apress Pro JSP 2, 4th Edition</h1>
+		
+		<p>Welcome to the code supplement for the Apress book 
+		<a href="http://www.apress.com/book/bookDisplay.html?bID=464">Professional 
+		JSP 2, 4th Edition</a>. This archive contains all the source code
+		for every example in the book, with the exception of the 
+		struts-resume example from Chapter 15. The struts-resume example
+		is a separate download available from sourceforge.net. The 
+		download details for the struts-resume example are discussed later.
+		</p>
+		
+		<h2>Things to do before compiling or deploying</h2>
+		<ul>
+		<li>Modify tomcat.properties for your tomcat server. If you
+		aren't using a Tomcat server, you can ignore this.</li>
+		<li>Modify ant.properties in Chapter 9 and Chapter 13 to set the
+		tomcat.version property to reflect
+		the Tomcat server version. If you are not using Tomcat, you must 
+		still set a server version, or you can modify the build.xml file so
+		that the build does not check for tomcat.version, and so that the
+		build does not create the META-INF/context.xml file.</li>
+		<li>Download and install Ant. We used version 1.6.5</li>
+		<li>Download and install an application server. We tested the examples
+		on Tomcat 5.0.28 and Tomcat 5.5.12</li>
+		<li>If you are using Tomcat, download the Tomccat Deployer library
+		and copy the catalina-ant.jar file to the catalina-ant directory</li>
+		<li>Download and install support libraries (see below).</li>
+		</ul>		
+		
+		<h2>General instructions</h2>
+		<p>Although all the example source code is here, this archive  
+		does not include the supporting Java libraries needed for each 
+		example. You will need to download these libraries separately and 
+		add the appropriate JAR files (as listed below) to the directory 
+		structure created when you unzipped the source code. The 
+		libraries needed for each example will be listed below, and 
+		summarized again at the end of the list of examples.</p>
+		
+		<p>In addition, some of the JAR files must be copied to your server's
+		lib directory. For Tomcat, that will be the common/lib or server/lib
+		directory. Consult your server docs for the specific directory used
+		by your application server. The list of JAR files to be copied to
+		the lib directory is given near the end of this page.</p>
+		
+		<p>After downloading the required libraries and copying the 
+		necessary JAR files to the appropriate directories, you can use Ant 
+		to build and deploy the examples. Each Chapter has its own Ant
+		build.xml file, so that you can build and deploy each example 
+		individually. Each chapter has the same basic set of build targets.
+		The two targets you are most likely to use are "build-war" and "deploy."
+		The build-war target compiles files and creates a WAR file that can
+		be deployed to any application server. The deploy target builds the
+		war file and automatically deploys the application to a Tomcat 
+		server. For the automatic deployment to Tomcat, you need to edit
+		the tomcat.properties file so that it has the correct values for
+		the Tomcat server url, admin username, and admin password.</p>
+		
+		<p>There is also a global build file that can be used to build and
+		deploy all the examples, with one exception. The Chapter 12 
+		example that uses LDAP, can be built using the global build file,
+		but it is deployed separately because it requires a running LDAP 
+		server to install properly in Tomcat. The global build targets are 
+		<ul>
+		  <li>build-all - builds all examples into a WAR</li>
+		  <li>undeploy-all - undeploys all examples from Tomcat</li>
+		  <li>deploy-all - deploys all examples (with the exception of
+		  the Chapter 12 LDAP example) to Tomcat</li>
+		  <li>clean-all - deletes all compiled files and build files</li>
+		</ul>
+		</p>
+		
+		<p>To deploy the Chapter 12 LDAP example, you must have a running
+		LDAP server. After starting the LDAP server, you can deploy the
+		example using the Ant build script in the Sec04 subdirectory in the
+		Chapter 12 directory.</p>
+
+		<p>These examples were built using Ant 1.6.5, and tested on
+		Tomcat 5.0.28 and Tomcat 5.5.12.
+		</p>		
+		
+		<h2>Required libraries by chapter</h2>
+		<p>This section lists the libraries required for each chapter. However,
+		the Servlet and JSP libraries are not listed. These libraries are
+		supplied by your application server, so you configure the location
+		and name of these libraries in the tomcat.properties file.</p>
+		
+		<p>For each library, the version used to test the example is also
+		listed. You can attempt to use a different library, but the 
+		application has been tested only with the listed version.</p>
+		 
+		<h3>Chapter 01</h3>
+		No libraries required.
+		
+		<h3>Chapter 02</h3>
+		No libraries required.
+		
+		<h3>Chapter 03</h3>
+		No libraries required.
+				
+		<h3>Chapter 04</h3>
+		<p><a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">JSP 
+		Standard Tag Library 1.1</a> - Uses jstl.jar and standard.jar</p>
+		<p><a href="http://xml.apache.org/xalan-j/downloads.html">Xalan 
+		2.7.0</a> - Uses xalan.jar and serializer.jar</p>
+		
+		<h3>Chapter 05</h3>
+		<p><a href="http://java.sun.com/j2ee/javaserverfaces/download.html">JavaServer 
+		Faces 1.1.01</a> - Uses commons-beanutils.jar, 
+		commons-collections.jar, commons-digester.jar, commons-logging.jar,
+		jsf-api.jar, and jsf-impl.jar</p>
+		<p><a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">JSP 
+		Standard Tag Library 1.1</a> - Uses jstl.jar and standard.jar</p>
+
+		<h3>Chapter 06</h3>
+		No libraries required.
+
+		<h3>Chapter 07</h3>
+		<p><a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">JSP 
+		Standard Tag Library 1.1</a> - Uses jstl.jar and standard.jar</p>
+
+		<h3>Chapter 08</h3>
+		<p><a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">JSP 
+		Standard Tag Library 1.1</a> - Uses jstl.jar and standard.jar</p>
+
+		<h3>Chapter 09</h3>
+		<p><a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">JSP 
+		Standard Tag Library 1.1</a> - Uses jstl.jar and standard.jar</p>
+    <p><a href="http://www.hibernate.org/6.html">Hibernate 3.0.5</a> - 
+    Uses antlr-2.7.5H3.jar, asm.jar
+    cglib-2.1.jar, commons-collections-2.1.1.jar, 
+    commons-logging-1.0.4.jar, dom4j-1.6.jar, ehcache-1.1.jar,
+    hibernate3.jar, jta.jar</p>
+    <p><a href="http://hsqldb.org/">HSQLDB 1.8.0</a> - Copy hsqldb.jar
+    to the application server's lib directory. For example, if you are
+    using Tomcat, copy hsqldb.jar to Tomcat's common/lib directory.</p>
+    <p><a href="http://flock.sourceforge.net/">Flock 0.6</a> - Since
+    Flock is not bundled as a library, a flock JAR file is included
+    with this download. In addition, you need the commons-lang-1.0.jar,
+    jdom-1.0b8.jar, log4j-1.2.6.jar files that come with the Flock
+    distribution.</p>
+    <p><a href="http://www.castor.org/index.html">Castor 0.9.9.1</a> - 
+    Uses castor-0.9.9.1.jar</p>   
+    
+		<h3>Chapter 10</h3>
+		No libraries required.
+
+		<h3>Chapter 11</h3>
+		No libraries required.
+
+		<h3>Chapter 12</h3>
+    <p>The JDBC example uses <a href="http://hsqldb.org/">HSQLDB 1.8.0</a> 
+    - Copy hsqldb.jar to the application server's lib directory. For 
+    example, if you are
+    using Tomcat, copy hsqldb.jar to Tomcat's common/lib directory. If
+    you are using some other database, copy the JDBC driver library to
+    the same location.</p>
+    <p>The LDAP example uses an <a href="http://www.openldap.org">ldap 
+    server for *nix</a> or <a href="http://lucas.bergmans.us/hacks/openldap/">ldap 
+    server</a> for Windows</p>
+    <p>The LDAP example also uses 
+    <a href="http://java.sun.com/products/jndi/downloads/index.html">JNDI</a>
+    - Copy the ldap.jar file to the common/lib directory</p>
+    <p>The JAAS example uses <a href="http://free.tagish.net/jaas/">Tagish 1.0.3</a> 
+    - Copy tagishauth.jar to the application server's lib directory. 
+    In addition, you need NTSystem.dll for Windows, which should be 
+    copied to the Tomcat bin directory.</p>
+
+		<h3>Chapter 13</h3>
+		<p>Uses the same libraries as Chapter 09</p>
+    <p>In addition uses <a href="http://www.opensymphony.com/oscache/">OSCache 
+    2.2</a> - Uses oscache-2.2.jar</p>
+
+		<h3>Chapter 14</h3>
+    <p><a href="http://tagunit.sourceforge.net">Tagunit 1.0.1</a> - Uses 
+    tagunit.jar</p>
+    <p><a href="http://jakarta.apache.org/cactus/">Cactus 1.7.1</a> - 
+    Uses aspectjrt-1.2.1.jar, cactus-1.7.1.jar, 
+    commons-httpclient-2.0.2.jar, and commons-logging-1.0.4.jar</p>
+    <p><a href="">JUnit 3.8.1</a> - Uses junit.jar which you need as
+    part of the classpath for compiling. In addition, junit.jar should
+    be in the Ant lib directory, so that the Ant junit task can be
+    called</p>    
+    
+		<h3>Chapter 15</h3>
+		Installation instructions are in the Chapter 15 directory of this 
+		distribution.
+		
+		<h2>Libraries required</h2>
+		<p><a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">JSP 
+		Standard Tag Library 1.1</a> - Used for Chapters 4, 5, 7, 8, and 9 </p>
+		
+		<p><a href="http://xml.apache.org/xalan-j/downloads.html">Xalan 
+		2.7.0</a> - Used for Chapter 4</p>
+		
+		<p><a href="http://java.sun.com/j2ee/javaserverfaces/download.html">JavaServer 
+		Faces 1.1.01</a> - Used for Chapter 5</p>
+		
+    <p><a href="http://www.hibernate.org/6.html">Hibernate 3.0.5</a> - 
+    Used for Chapters 9 and 13</p>
+    <p><a href="http://hsqldb.org/">HSQLDB 1.8.0</a> - Used for Chapters 
+    9, 12, and 13</p>
+    <p><a href="http://flock.sourceforge.net/">Flock 0.6</a> - Used for 
+    Chapters 9 and 13</p>
+    <p><a href="http://www.castor.org/index.html">Castor 0.9.9.1</a> - 
+    Used for Chapters 9 and 13</p>   
+		
+    <p><a href="http://java.sun.com/products/jndi/downloads/index.html">JNDI</a>
+    - Used for Chapter 12</p>
+    <p><a href="http://free.tagish.net/jaas/">Tagish 1.0.3</a> 
+    - Used for Chapter 12</p>
+    <p><a href="http://www.opensymphony.com/oscache/">OSCache 
+    2.2</a> - Used for Chapter 13</p>
+
+    <p><a href="http://tagunit.sourceforge.net">Tagunit 1.0.1</a> - Used 
+    for Chapter 14</p>
+    <p><a href="http://jakarta.apache.org/cactus/">Cactus 1.7.1</a> - 
+    Used for Chapter 14</p>
+    <p><a href="">JUnit 3.8.1</a> - Used for Chapter 14</p>    
+
+		<h2>Libraries to be copied to server lib directory</h2>
+		
+    <p><a href="http://hsqldb.org/">HSQLDB 1.8.0</a> - The hsqldb.jar
+    file must be copied to the server's lib directory for the Chapter
+    12 examples that access an HSQL database for authentication.</p>
+    <p><a href="http://dev.mysql.com/downloads/connector/j/3.1.html">MySQL
+    Connector/J</a> - If you are using some other
+    database for Chapter 12, such as MySQL, you need to copy the JDBC
+    driver file (Connector/J for MySQL) to the server's lib directory.</p>
+    <p><a href="http://java.sun.com/products/jndi/downloads/index.html">JNDI</a>
+    - The ldap.jar file must be copied to the server's lib directory
+    for the Chapter 12 example that uses ldap</p>
+    <p><a href="http://free.tagish.net/jaas/">Tagish 1.0.3</a> 
+    - The tagishauth.jar file must be copied to the server's lib directory
+    for the Chapter 12 example that uses JAAS</p>
+
+  </body>
+</html>

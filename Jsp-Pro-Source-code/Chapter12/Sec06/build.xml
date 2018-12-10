@@ -1,0 +1,83 @@
+<project name="ProJSP_Ch12_Sec06" default="build-war">
+	
+	<property file="ant.properties"/>
+    <property file="../../tomcat.properties"/>
+
+	<taskdef file="../../tomcat-task.properties">
+      <classpath>
+        <pathelement path="../../catalina-ant/catalina-ant.jar"/>
+      </classpath>
+    </taskdef>
+
+	<!-- *************************************************** -->
+
+	<target name="compile" depends="clean">
+    	<mkdir dir="WEB-INF/classes"/>
+        <javac debug="true" srcdir="src" 
+               destdir="WEB-INF/classes" />
+	</target>
+		
+	<target name="build-jaas" depends="compile">
+        <mkdir dir="projsp-prep"/>
+        <mkdir dir="projsp-jar"/>
+
+		<copy todir="./projsp-prep">
+			<fileset dir="WEB-INF/classes">
+				<include name="**/*.class"/>
+			</fileset>
+		</copy>	
+
+		<jar destfile="./projsp-jar/projsp-jaas.jar" basedir="projsp-prep"/>			
+	</target>
+
+	<target name="deploy-jaas" depends="build-jaas">
+		<copy tofile="${servlet.libdir}/projsp-jaas.jar"
+	          file="projsp-jar/projsp-jaas.jar" />
+    </target>    
+
+	<!-- Stage web application for WAR format in ./build -->
+	<target name="build-war">		
+        <mkdir dir="./build/WEB-INF"/>
+        <mkdir dir="./war"/>
+
+		<copy todir="./build">
+			<fileset dir=".">
+				<include name="META-INF/**/*"/>
+				<include name="WEB-INF/**/*"/>
+				<exclude name="WEB-INF/classes/**/*"/>
+				<include name="jaas/**/*"/>
+				<include name="*.jsp"/>
+			</fileset>
+		</copy>	
+
+		<jar destfile="./war/${webapp.name}.war" basedir="./build"/>			
+	</target>
+
+	<target name="undeploy" >
+      <undeploy url="${tomcat.manager.url}"
+                username="${tomcat.username}"
+                password="${tomcat.password}"
+                path="/${webapp.name}"
+                failOnError="false"/>
+    </target>    
+	
+	<target name="deploy" depends="undeploy,build-war">
+	    <deploy url="${tomcat.manager.url}"
+	            username="${tomcat.username}"
+	            password="${tomcat.password}"
+	            path="/${webapp.name}"
+                war="${basedir}/war/${webapp.name}.war"/>
+    </target>    
+
+	<target name="clean">
+		<delete quiet="true" dir="./build"/>
+		<delete quiet="true" dir="./war"/>
+        <delete quiet="true" dir="projsp-prep"/>
+        <delete quiet="true" dir="projsp-jar"/>
+	</target>
+
+	<target name="cleanall" depends="clean">
+		<delete quiet="true" dir="WEB-INF/classes" />
+	</target>
+
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/ProJSP_Ch12_Sec03" 
+         docBase="ProJSP_Ch12_Sec03" 
+         debug="99">
+   <Realm className="org.apache.catalina.realm.JDBCRealm" debug="99"
+          driverName="org.hsqldb.jdbcDriver"
+          connectionURL="jdbc:hsqldb:hsql://localhost"
+          connectionName="test" 
+          connectionPassword="test"
+          userTable="users" 
+          userNameCol="username" 
+          userCredCol="password"
+          userRoleTable="user_roles" 
+          roleNameCol="role_name" />
+</Context>

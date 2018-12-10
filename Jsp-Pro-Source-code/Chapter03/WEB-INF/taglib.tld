@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+	<tlib-version>1.0</tlib-version>
+  	<jsp-version>1.2</jsp-version>
+	<short-name>projsp</short-name>
+	<uri>/projsp</uri>
+	
+	<description>
+	</description>
+	
+    <function>
+		<name>upper</name>
+		<function-class>com.apress.projsp.Functions</function-class>
+		<function-signature>java.lang.String toUpperCase(java.lang.String)(</function-signature>
+	</function>
+
+	<function>
+		<name>greet</name>
+		<function-class>com.apress.projsp.Functions</function-class>
+		<function-signature>java.lang.String sayHello()(</function-signature>
+	</function>
+
+    <function>
+		<name>source</name>
+		<function-class>com.apress.projsp.Functions</function-class>
+		<function-signature>java.lang.String source(java.lang.String, javax.servlet.jsp.PageContext)(</function-signature>
+	</function>
+		
+	
+</taglib>

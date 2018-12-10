@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+  <display-name>Pro JSP - Chapter 13 Performance</display-name>
+
+	<servlet>
+		<servlet-name>AgController</servlet-name>
+		<servlet-class>com.apress.projsp.web.Controller</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AgController</servlet-name>
+		<url-pattern>/ag/*</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+		<param-name>persistenceEngine</param-name>
+		<param-value>hibernate</param-value>
+	</context-param>
+
+  <resource-ref>
+    <res-ref-name>jdbc/agdb</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+  </resource-ref>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>

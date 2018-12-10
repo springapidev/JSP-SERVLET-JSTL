@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/ProJSP_Ch12_Sec01" >
+  <Realm className="org.apache.catalina.realm.MemoryRealm"  />
+</Context>

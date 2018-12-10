@@ -1,0 +1,10 @@
+<Context path="/ProJSP_Ch12_Sec04" >
+<Realm className="org.apache.catalina.realm.JNDIRealm" debug="99"
+       connectionURL="ldap://localhost"
+       userPassword="userPassword"
+       userPattern="uid={0},ou=people,dc=raibledesigns,dc=com"
+       roleBase="ou=groups,dc=raibledesigns,dc=com"
+       roleName="cn"
+       roleSearch="(uniqueMember={0})" 
+/>
+</Context>

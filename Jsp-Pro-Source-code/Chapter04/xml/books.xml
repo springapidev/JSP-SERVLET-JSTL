@@ -1,0 +1,26 @@
+<books>
+  <book>
+    <title>Professional JSP 2, 4thEdition</title>
+    <author>Brown et. al</author>
+    <isbn>1-59059-513-0</isbn>
+    <published>December 2005</published>
+    <publisher>Apress</publisher>
+    <url>http://www.apress.com/book/bookDisplay.html?bID=464</url>
+  </book>
+  <book>
+    <title>Macbeth</title>
+    <author>William Shakespeare</author>
+    <isbn>1123456789</isbn>
+    <published>A long time ago</published>
+    <publisher>Bloggs Publishers</publisher>
+    <url>http://booksrus.co.uk/titles/1123456789.html</url>
+  </book>
+  <book>
+    <title>Fly Fishing</title>
+    <author>JR Hartley</author>
+    <isbn>987654321</isbn>
+    <published>May 1947</published>
+    <publisher>ABC Printers Press</publisher>
+    <url>http://books.com/books.jsp?id=987654321</url>
+  </book>
+</books>

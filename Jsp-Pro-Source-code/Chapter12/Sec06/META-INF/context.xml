@@ -1,0 +1,6 @@
+<Context path="/ProJSP_Ch12_Sec06" docBase="ProJSP_Ch12_Sec06" debug="99">
+<Realm className="org.apache.catalina.realm.JAASRealm" debug="99"
+    appName="ProJSP"
+    userClassNames="com.apress.projsp.MyPrinciple"
+    roleClassNames="com.apress.projsp.MyRolePrinciple" />
+</Context>

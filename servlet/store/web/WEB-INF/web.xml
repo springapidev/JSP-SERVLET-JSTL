@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+ <display-name>Store</display-name>
+
+	<servlet>
+		<servlet-name>FrontController</servlet-name>
+		<servlet-class>com.apress.projsp.store.FrontController</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FrontController</servlet-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</servlet-mapping>
+
+ 	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<include-prelude>/header.jsp</include-prelude>
+			<include-coda>/footer.jsp</include-coda>
+		</jsp-property-group>
+	</jsp-config>
+
+    <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <exception-type>com.apress.projsp.store.ItemAlreadyAddedException</exception-type>
+        <location>/duplicateItem.html</location>
+    </error-page>
+
+</web-app>

@@ -1,0 +1,98 @@
+h1 {
+  font-family: verdana, arial, helvetica;
+  font-size: 20pt;
+  font-style: normal;
+  font-weight: heavy;
+  background-color: #FFFFFF;
+  text-align: left;
+}
+
+h2 {
+  font-family: verdana, arial, helvetica;
+  font-size: 14pt;
+  font-style: normal;
+  font-weight: heavy;
+  background-color: #FFFFFF
+}
+
+h3 {
+  font-family: verdana, arial, helvetica;
+  font-size: 12pt;
+  font-style: normal;
+  font-weight: heavy;
+  background-color: #FFFFFF;
+}
+
+h6 {
+  font-family: verdana, arial, helvetica;
+  font-size: 8pt;
+  font-style: normal;
+  text-align: left
+}
+
+body, p {
+  font-family: verdana, arial, helvetica;
+  font-size: 9pt;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left
+}
+
+table, td {
+  font-family: verdana, arial, helvetica;
+  font-size: 9pt;
+  font-style: normal;
+  font-weight: normal;
+}
+
+a:link {
+  color: #0000FF;
+  font-family: verdana, arial, helvetica;
+}
+
+a:visited, a:active {
+  color: #800080;
+  font-family: verdana, arial, helvetica;
+}
+
+a:hover {
+  font-family: verdana, arial, helvetica;
+  color: #FF0000;
+}
+
+.boxHeader {
+    font-family: verdana, arial, helvetica;
+    font-size: 10pt;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.boxText {
+    font-family: verdana, arial, helvetica;
+    font-size: 9pt;
+    color: #000000;
+    font-weight: normal;
+}
+
+.boxHeader {
+    font-family: verdana, arial, helvetica;
+    font-size: 10pt;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.boxText {
+    font-family: verdana, arial, helvetica;
+    font-size: 10pt;
+    color: #000000;
+    font-weight: normal;
+}
+
+.storeHeader {
+	font-family: verdana, arial, helvetica;
+	font-size: 18pt;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+  background-color: #CC0033
+}

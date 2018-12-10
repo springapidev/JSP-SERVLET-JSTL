@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+	
+	<!-- ag.User root -->
+	<class name="com.apress.projsp.User" table="user">
+		
+		<id column="id" name="id" >
+			<generator class="uuid.hex"/>
+		</id>
+		
+		<property name="name" column="name" type="string" not-null="true" unique="true" />
+		
+		<set name="subscriptions" table="subscription">
+			<key column="user_id" />
+			<one-to-many class="com.apress.projsp.Subscription" />		
+		</set>	
+				 		
+	</class>
+	
+</hibernate-mapping>

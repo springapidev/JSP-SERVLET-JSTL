@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+	
+	<!-- ag.Item root -->
+	<class name="com.apress.projsp.Item" table="item">
+		
+		<id column="id" name="id" >
+			<generator class="uuid.hex"/>
+		</id>
+		
+		<property name="title" column="title" type="string" not-null="true" />
+		
+		<property name="link" column="link" type="string" not-null="true" />
+		
+		<property name="description" column="description" type="string" not-null="true" />
+		
+		<property name="content" column="content" type="string" not-null="true" />
+		
+		<property name="time" column="time" type="date" not-null="true" />
+		
+		<property name="hits" column="hits" type="integer" />
+		
+		<many-to-one name="newsfeed" class="com.apress.projsp.Newsfeed" 
+			column="newsfeed_id" />
+ 						 		
+	</class>
+	
+</hibernate-mapping>

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : action
-    Created on : Dec 11, 2017, 2:09:09 AM
-    Author     : Rajail Islam
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

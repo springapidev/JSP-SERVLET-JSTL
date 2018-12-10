@@ -8,12 +8,12 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Rajail Islam
+ * @author Rajaul Islam
  */
 public class DbConnection {
 
     private static final String HOST = "jdbc:mysql://localhost:3306";
-    private static final String DBNMAE = "swing";
+    private static final String DBNMAE = "jsp";
     private static final String URL = HOST + "/" + DBNMAE;
     private static Connection con = null;
 

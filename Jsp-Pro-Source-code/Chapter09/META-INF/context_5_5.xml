@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/ProJSP_Ch09" 
+    antiJARLocking="true">
+  <Resource
+    auth="Container"
+    name="jdbc/agdb"
+    type="javax.sql.DataSource"
+    password="test"
+    driverClassName="org.hsqldb.jdbcDriver"
+    maxIdle="2"
+    maxWait="5000"
+    username="test"
+    url="jdbc:hsqldb:hsql://localhost"
+    maxActive="4"/>
+</Context>

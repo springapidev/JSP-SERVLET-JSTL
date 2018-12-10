@@ -1,0 +1,79 @@
+<project name="ProJSP_Ch03" default="build-war">
+	
+	<property file="ant.properties"/>
+    <property file="../tomcat.properties"/>
+
+	<taskdef file="../tomcat-task.properties">
+      <classpath>
+        <pathelement path="../catalina-ant/catalina-ant.jar"/>
+      </classpath>
+    </taskdef>
+
+	<!-- *************************************************** -->
+
+	<!-- Compile -->
+    <target name="compile">
+        <mkdir dir="WEB-INF/classes"/>
+        <javac debug="true" srcdir="./src" 
+               destdir="WEB-INF/classes" >
+            <classpath>
+              <fileset dir="${servlet.libdir}">
+                <include name="${servlet.api}"/>
+                <include name="${jsp.api}"/>
+              </fileset>
+            </classpath>
+        </javac>
+
+    </target>
+
+	<!-- *************************************************** -->
+	
+	<!-- Stage web application for WAR format in ./build -->
+	<target name="build-war" depends="compile,clean">		
+        <mkdir dir="./build/WEB-INF"/>
+        <mkdir dir="./war"/>
+
+		<copy todir="./build">
+			<fileset dir=".">
+				<include name="**/*.jsp"/>
+				<include name="**/*.html"/>
+				<include name="WEB-INF/**"/>
+				<exclude name="WEB-INF/lib/**"/>
+			</fileset>
+			<fileset dir="../stylesheet">
+				<include name="*.css"/>
+			</fileset>
+		</copy>
+		
+		<jar destfile="./war/${webapp.name}.war" basedir="./build"/>			
+
+	</target>
+
+	<target name="undeploy" >
+      <undeploy url="${tomcat.manager.url}"
+                username="${tomcat.username}"
+                password="${tomcat.password}"
+                path="/${webapp.name}"
+                failOnError="false"/>
+    </target>    
+	
+	<target name="deploy" depends="undeploy, build-war">
+	    <deploy url="${tomcat.manager.url}"
+	            username="${tomcat.username}"
+	            password="${tomcat.password}"
+	            path="/${webapp.name}"
+                war="${basedir}/war/${webapp.name}.war"/>
+    </target>    
+	
+	<target name="clean">
+		<delete quiet="true" dir="./build"/>
+		<delete quiet="true" dir="./war"/>
+	</target>
+
+	<target name="cleanall" depends="clean">
+		<delete quiet="true">
+          <fileset dir="./WEB-INF/classes" includes="**/*.class"/>
+	    </delete>
+	</target>
+	
+</project>

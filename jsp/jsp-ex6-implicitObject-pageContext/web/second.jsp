@@ -15,8 +15,8 @@
         <h1>Hello World!</h1>
         <%
 
-            String name = (String) pageContext.getAttribute("user", PageContext.SESSION_SCOPE);
-            out.print("Hello " + name);
+            String n = (String) pageContext.getAttribute("user", PageContext.SESSION_SCOPE);
+            out.print("Hello " + n);
 
         %>  
     </body>

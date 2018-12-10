@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+  <display-name>Pro JSP - Chapter 12 JNDI BASIC</display-name>
+  <description>Web Application Security Example</description>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Security Example</web-resource-name>
+      <url-pattern>/jndi/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>developer</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-role>
+    <role-name>developer</role-name>
+  </security-role>
+  
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Security Example</realm-name>
+  </login-config>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

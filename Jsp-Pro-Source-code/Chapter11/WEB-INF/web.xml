@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+         
+  <display-name>Pro JSP - Chapter 11 Advanced Filters</display-name>
+
+  <servlet>
+    <servlet-name>findprod</servlet-name>
+    <servlet-class>com.apress.projsp.FindProd</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>findprod</servlet-name>
+    <url-pattern>/audit/findprod</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>findprod</servlet-name>
+    <url-pattern>/auth/findprod</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>findprod</servlet-name>
+    <url-pattern>/legacy/findprod</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>findprod</servlet-name>
+    <url-pattern>/adhoc/findprod</url-pattern>
+  </servlet-mapping>
+
+  <filter>
+    <filter-name>VisAudit Filter</filter-name>
+    <filter-class>com.apress.projsp.VisAuditFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>VisAudit Filter</filter-name>
+    <url-pattern>/audit/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>Stop Games Filter</filter-name>
+    <filter-class>com.apress.projsp.StopGamesFilter</filter-class>
+    <init-param>
+      <param-name>starthour</param-name>
+      <param-value>12</param-value>
+    </init-param>
+    <init-param>
+      <param-name>stophour</param-name>
+      <param-value>13</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>Stop Games Filter</filter-name>
+    <url-pattern>/auth/FindProd.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Stop Games Filter</filter-name>
+    <url-pattern>/auth/findprod</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>Legacy Adapter Filter</filter-name>
+    <filter-class>com.apress.projsp.LegacyAdapterFilter </filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Legacy Adapter Filter</filter-name>
+    <url-pattern>/legacy/*</url-pattern>
+  </filter-mapping> 
+
+  <filter>
+    <filter-name>AdHoc Authentication Filter</filter-name>
+    <filter-class>com.apress.projsp.AdHocAuthenticateFilter</filter-class>
+    <init-param>
+      <param-name>adhocpassword</param-name>
+      <param-value>bestofbreed</param-value>
+    </init-param>
+    <init-param>
+      <param-name>goldpassword</param-name>
+      <param-value>viponly</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AdHoc Authentication Filter</filter-name>
+    <url-pattern>/adhoc/FindProd.jsp</url-pattern>
+  </filter-mapping> 
+  <filter-mapping>
+    <filter-name>AdHoc Authentication Filter</filter-name>
+    <url-pattern>/adhoc/findprod</url-pattern>
+  </filter-mapping> 
+
+  <filter>
+    <filter-name>Simple Push Filter</filter-name>
+    <filter-class>com.apress.projsp.SimpleFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Simple Push Filter</filter-name>
+    <url-pattern>/pipeline/Sub.jsp</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Simple Push Filter</filter-name>
+    <url-pattern>/pipeline/Master.jsp</url-pattern>
+    <dispatcher>INCLUDE</dispatcher>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Simple Push Filter</filter-name>
+    <url-pattern>/pipeline/Sub.jsp</url-pattern>
+    <dispatcher>INCLUDE</dispatcher>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Simple Push Filter</filter-name>
+    <url-pattern>/pipeline/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+</web-app>

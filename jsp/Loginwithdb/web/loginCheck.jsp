@@ -8,6 +8,7 @@
         <%
             String u = request.getParameter("username");
             String p = request.getParameter("password");
+            
              if (u.equals("admin") && p.equals("123456")) {
                 session.setAttribute("username", u);
                 response.sendRedirect("home.jsp");

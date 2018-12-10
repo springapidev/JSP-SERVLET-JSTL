@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <display-name>Pro JSP - Chapter 2 Servlet Examples</display-name>
+
+	<servlet>
+		<servlet-name>MyServlet</servlet-name>
+		<servlet-class>com.apress.projsp.MyServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>HttpServletHeaders</servlet-name>
+		<servlet-class>com.apress.projsp.HttpServletHeaders</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ErrorServlet</servlet-name>
+		<servlet-class>com.apress.projsp.ErrorServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MyServlet</servlet-name>
+		<url-pattern>/MyServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>HttpServletHeaders</servlet-name>
+		<url-pattern>/HeaderServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ErrorServlet</servlet-name>
+		<url-pattern>/ErrorServlet</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+		<exception-type>java.lang.ArithmeticException</exception-type>
+		<location>/error.html</location>
+	</error-page>
+
+  	<error-page>
+   		<error-code>404</error-code>
+   		<location>/404.html</location>
+  	</error-page>
+
+    <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>

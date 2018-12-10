@@ -1,0 +1,151 @@
+<project name="ProJSP_Ch14" default="build-war">
+  
+  <property file="ant.properties"/>
+  <property file="../tomcat.properties"/>
+
+  <taskdef file="../tomcat-task.properties">
+    <classpath>
+        <pathelement path="../catalina-ant/catalina-ant.jar"/>
+    </classpath>
+  </taskdef>
+
+  <path id="junit.path">
+  	<fileset dir="${junit.libdir}">
+	  	<include name="${junit.jar}"/>
+  	</fileset>
+  </path>
+	
+	<!-- *************************************************** -->
+
+  <target name="compile">
+    <mkdir dir="WEB-INF/classes"/>
+    <javac debug="true" srcdir="src" 
+           destdir="WEB-INF/classes" >
+      <classpath>
+        <fileset dir="${servlet.libdir}">
+          <include name="${jsp.api}"/>
+          <include name="${servlet.api}"/>
+        </fileset>
+      </classpath>
+    </javac>
+  </target>
+
+<!-- *************************************************** -->
+	<target name="build-war" depends="build-taglib">		
+    <mkdir dir="./build/WEB-INF"/>
+    <mkdir dir="./build/WEB-INF/lib"/>
+    <mkdir dir="./war"/>
+
+		<copy todir="./build">
+			<fileset dir=".">
+				<include name="WEB-INF/**/*"/>
+				<include name="src/**/*"/>
+				<include name="test/**/*"/>
+				<exclude name="WEB-INF/classes"/>
+				<exclude name="WEB-INF/classes/**/*"/>
+				<exclude name="WEB-INF/tlds"/>
+				<exclude name="WEB-INF/tlds/**/*"/>
+				<include name="*.jsp"/>
+				<include name="*.java"/>
+			</fileset>
+			<fileset dir="../stylesheet">
+				<include name="*.css"/>
+			</fileset>
+		</copy>
+
+		<copy todir="./build/wEB-INF/lib">
+			<fileset dir="taglib">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="../tagunit">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+		
+		<jar destfile="war/${webapp.name}.war" basedir="./build"/>			
+
+	</target>
+
+	<target name="undeploy" >
+      <undeploy url="${tomcat.manager.url}"
+                username="${tomcat.username}"
+                password="${tomcat.password}"
+                path="/${webapp.name}"
+                failOnError="false"/>
+    </target>    
+	
+	<target name="deploy" depends="cleanall,undeploy,build-war">
+	    <deploy url="${tomcat.manager.url}"
+	            username="${tomcat.username}"
+	            password="${tomcat.password}"
+	            path="/${webapp.name}"
+              war="${basedir}/war/${webapp.name}.war"/>
+    </target>    
+	
+	<!-- Create tag library in JAR format in ./taglib -->
+	<target name="build-taglib" depends="compile">		
+    <delete quiet="true" dir="./taglib"/>
+		<mkdir dir="./taglib"/>
+
+		<delete quiet="true" dir="./stage"/>
+    <mkdir dir="./stage/META-INF"/>
+
+		<copy todir="./stage">
+			<fileset dir="WEB-INF/classes/">
+				<include name="**/Functions.class"/>
+			</fileset>
+		</copy>
+
+		<copy file="WEB-INF/tlds/projsp-fn.tld"
+			  tofile="stage/META-INF/projsp-fn.tld"/>
+		
+		<jar destfile="./taglib/ch14-fn.jar" basedir="stage"/>
+
+		<delete quiet="true" dir="./stage"/>
+    <mkdir dir="./stage/META-INF"/>
+
+		<copy todir="./stage">
+			<fileset dir="WEB-INF/classes/">
+				<include name="**/EmailAddressFilterTag.class"/>
+			</fileset>
+		</copy>
+
+		<copy file="WEB-INF/tlds/projsp-tags.tld"
+			  tofile="stage/META-INF/projsp-tags.tld"/>
+		
+		<jar destfile="./taglib/ch14-tags.jar" basedir="stage"/>
+
+		<delete quiet="true" dir="./stage"/>
+
+	</target>
+
+	<target name="compile-tests" depends="compile">
+    <javac debug="true" srcdir="test" 
+           destdir="WEB-INF/classes" >
+      <classpath>
+        <path refid="junit.path" />
+      </classpath>
+    </javac>
+	</target>
+
+	<target name="run-customer-test" depends="compile-tests">
+		<junit fork="yes" printsummary="on">
+			<classpath>
+		    <pathelement location="WEB-INF/classes"/>
+  	  </classpath>
+			<test name="com.apress.projsp.CustomerTest"/>
+		</junit>
+	</target>
+
+	<target name="clean">
+		<delete quiet="true" dir="./build"/>
+		<delete quiet="true" dir="./war"/>
+	</target>
+
+	<target name="cleanall" depends="clean">
+		<delete quiet="true">
+          <fileset dir="./WEB-INF/classes" includes="**/*.class"/>
+	    </delete>
+	</target>
+		
+</project>

@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Hello World! I am index page</h1>
         <jsp:forward page="forwardPage.jsp" />  
     </body>
 </html>
