@@ -1,8 +1,3 @@
-<%-- 
-    Document   : ssimpleBean
-    Created on : Dec 17, 2017, 1:04:09 AM
-    Author     : Rajail Islam
---%>
 <jsp:useBean id="person" class="com.coderbd.Person">
     <jsp:setProperty name="person" property="*"/>
 
@@ -18,10 +13,12 @@
         <h1>Hello World!</h1>
         ${person.name}
         ${person.age}
+        ${person.email}
 
         <form action="simpleBean.jsp">
             <input type="text" name="name">
-            <input type="text" name="age">
+            <input type="email" name="email">
+              <input type="text" name="age">
             <input type="submit" name="Send">
 
         </form>

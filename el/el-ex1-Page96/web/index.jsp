@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Dec 17, 2017, 12:09:24 AM
-    Author     : Rajail Islam
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page isELIgnored="false"%>
 <!DOCTYPE html>
@@ -14,9 +8,10 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-       
+        <jsp:useBean id="myBean" class="com.coderbd.MyBean" scope="session"></jsp:useBean>
         
         ${20+5}
+        ${myBean.name}
 
     </body>
 </html>

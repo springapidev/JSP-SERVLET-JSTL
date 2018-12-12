@@ -12,9 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello ${param['name']}</h1>
-        <form action="index.jsp" method="post">
-            <input type="text" name="name"/>  
+        <h1>Name ${param['fname']}</h1>
+        <h1>Age ${param['age']}</h1>
+        <form action="index.jsp" method="get">
+            <input type="text" name="fname"/> 
+            <input type="number" name="age"/> 
             <input type="submit" value="Submit"/>
         </form>
     </body>
