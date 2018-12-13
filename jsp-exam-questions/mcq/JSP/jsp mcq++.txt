@@ -1,0 +1,210 @@
+Chapter-1
+
+1.Which Declarations are valid in jsp page?
+	a.<%! declaration; [declaration;]+...%>
+	b.<%! declaration; (declaration;)+...%>
+	c.<%! private int calculate(int a, int b){}%>
+	d.<%  private int calculate[int a, int b]{}%>
+
+ ans:a,c
+
+2.Which Scriptlets are produce dynamic output?
+
+	a.<% User user = (user) request.getAttribute("User");
+		if (User != null ) {
+			%> 
+     Welcome, you have successfully logged in ! 
+     <%
+      } 
+     %>
+	b.<% User user = (User) request.getAttribute("User");
+		if (user != null ) {
+			%> Welcome, you have successfully logged in ! <% } %>
+	c.<% User user = (User) request.setAttribute("User");
+		if (user != null ) {
+			%> Welcome, you have successfully logged in ! <% } %>
+	d.<% User user = (User) Session.getAttribute("User");
+		if (user != null ) {
+			%> Welcome, you have successfully logged in ! <% } %>
+
+	ans:b
+
+3 Which files are created by using the %JAVA_HOME%\bin\jar.exe utility?
+
+	a. URI
+	b. JAR
+	c. Tag
+
+ans: b
+
+4. Tag files are special JSP files that end with the following
+
+	a. suffix.tag or .tags
+	b. suffix.tag.tagx
+	c. suffix.tag or.tagx
+
+ans: c
+
+5. Which of the following called deployment Descriptor?
+
+	a. index.jsp 
+	b. web.xml
+
+ans: b
+
+6. Which one is describe the tag library?
+
+     	a. WEB-INF\tlds\myTaglib.tlds
+	b. WEB-INF\tlds\myTaglib.jsp
+	c. WEB-INF\tlds\myTaglib.tld
+
+ans: c
+
+7.who are not capable to execute java code which language help them in jsp page:
+
+  a.jstl
+  b.EL Expression
+  c.custom.
+  d.servlet
+
+ ans:a,b,c
+
+8. When page directives called is threadSafe to false it's indicate?
+
+  a.SingleThreadModel interface.
+  b.multiplethreadModel interface
+
+ans:b
+
+Chapter 2
+
+1.The web container does not implements which interface ?
+
+a.Servlet
+b. Filter
+c.FilterChain
+d. ServletContext
+
+Ans: c,d
+
+2.The Servlet interface define the life-cycle method of a basic servlet.Which is true ?
+
+a. initialization, service, destruction
+b. initialization, servlet, destroy
+c. initialization, servletConfig, destruction
+d. initialization, definition, destruction
+
+Ans: a
+
+3.The container uses the ServletConfig interface to pass information to a servlet.Which is true?
+
+a.servlet
+b.initialization
+c.nothing
+
+Ans: b
+
+4.The State change of the ServletContext object. Which interface is uses?
+
+a.ServletConfig
+b.ServletContextAttributeListener
+c.ServletContextListener
+
+Ans:c
+
+5.Which interface can perform similar functionality?
+
+a.ServletContextListener
+b.ServletRequest
+c.ServletContextAttributeListener
+
+Ans: c
+
+6.Which interface is manages client requests?
+
+a. RequestConfig
+b. RequestDispatcher
+c. ServletRequest
+
+Ans: b
+
+7.Which method will retrurn the parameter value?
+
+a. setParameter()
+b. getParamValue()
+c. getParameter()
+
+Ans: C
+
+8.Which methods allow you to override the behavior of HTTP?
+
+a. doOptions() and doTrace()
+b. dogetOptions and doGetTrace()
+c. doSetOptions and doSetTrace()
+
+Ans:  a
+
+Chapter-3
+
+1.	Programming language the el provides several literals for developers to use. A literal can be of a-
+
+	a.	Boolean, integer
+	b.	Floating, string
+	c.	Null type
+	d.	All of above
+
+Answer: d
+
+2.	Arithmetic operators are provided to action both integer and floating-point values. We can use and combine to achieve the vast majority of mathematical calculations. Which is arithmetic operator-
+
+	a.	Exponents
+	b.	Integer
+	c.	Instanceof
+	d.	None of the above
+
+Answer: a
+
+3.	JSP implicit objects allow to access things such as the request, session and page context. JSP implicit objects  are-
+
+	a.	expoponents
+	b.	cookie
+	c.	header
+	d.	instanceof
+
+answer: b, c
+
+chapter 4
+
+1.  Which tags are contains JSTL
+
+a) TLD.tld, fmt.tld, sql.tld, x.tld
+b) c.tld, fmt.tld, sql.tld, x.tld
+c) tlds.tld, ft.tld, sql.tld, x.tld
+
+Answer: b
+
+2.<c:set> action is use to set a property of a scoped object.
+     <c:set target="person" property="lastname" value="Sondra"/>
+Which is true about this action ?
+
+a) value is null, the property set to null if the target is an object.
+b) value is null, the property set to null if the target is map.
+c) value is null, the property set to null if the target is session.
+
+Answer: a
+
+3. Which method is used when no scope is specified ?
+
+a)removeAttribute(var)
+b)PageContext.removeAttribute(var)
+c)JspWriter.removeAttribute(var)
+
+Answer: b
+
+4. <c:if> Action evaluate result is true, what happen ?
+
+a) output return to the current JspWriter.
+b) output return to the another JspWriter.
+c) none
+
+Answer: a
