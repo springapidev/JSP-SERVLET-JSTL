@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+            <style type="text/css">    
+    .white-button.ui-button.ui-state-default {
+        background-color: #ffffff;
+        color: #222222;
+        border-color: #d6d6d6;
+        /* with the exported variables from Nova and Luna Themes*/
+        border-color: var(--input-border-color, #d6d6d6);
+    }
+ 
+    .white-button.ui-button.ui-state-default:enabled:hover, 
+    .white-button.ui-button.ui-state-default:focus {
+        background-color: #f2f2f2;
+        border-color: #ccc;
+        color: #373a3c;
+        /* with the exported variables from Nova and Luna Themes*/
+        border-color: var(--input-hover-border-color, #ccc);
+    }
+ 
+    .green-button.ui-button.ui-state-default {
+        background-color: #5cb85c;
+        border-color: #5cb85c;
+        color: #fff;
+    }
+ 
+    .green-button.ui-button.ui-state-default:enabled:hover, 
+    .green-button.ui-button.ui-state-default:focus {
+        background-color: #4cae4c;
+        border-color: #5cb85c;
+    }
+ 
+    .red-button.ui-button.ui-state-default {
+        background-color: #d9534f;
+        border-color: #d9534f;
+        color: #fff;
+    }
+ 
+    .red-button.ui-button.ui-state-default:enabled:hover, 
+    .red-button.ui-button.ui-state-default:focus {
+        background-color: #d43f3a;
+        border-color: #d9534f;
+    }
+     
+</style>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    Header
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Resources">
+                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    Welcome to PrimeFaces
+                    
+                    
+                   <h3 style="margin-top:0">Addons</h3>
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <p:inputText placeholder="Username" />      
+        </div>
+    </div>
+ 
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">$</span>
+            <p:inputText placeholder="Price" />
+            <span class="ui-inputgroup-addon">.00</span>      
+        </div>
+    </div>
+ 
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">www</span>
+            <p:inputText placeholder="Website" />   
+        </div>
+    </div>
+</div>
+ 
+<h3>Multiple Addons</h3>
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-shopping-cart"></i></span>  
+            <span class="ui-inputgroup-addon"><i class="pi pi-money-bill"></i></span>   
+            <p:inputText placeholder="Price" />
+            <span class="ui-inputgroup-addon">$</span>  
+            <span class="ui-inputgroup-addon">.00</span>      
+        </div>
+    </div>
+</div>
+ 
+<h3>Button Addons</h3>
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <p:commandButton value="Search"/> 
+            <p:inputText placeholder="Keyword" />        
+        </div>
+    </div>
+ 
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <p:inputText placeholder="Keyboard" />
+            <p:commandButton icon="pi pi-search"  styleClass="white-button"/>  
+        </div>
+    </div>
+ 
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <p:commandButton icon="pi pi-check" styleClass="green-button"/> 
+            <p:inputText placeholder="Vote" />
+            <p:commandButton icon="pi pi-times" styleClass="red-button"/>     
+        </div>
+    </div>
+</div>
+ 
+<h3>Checkbox</h3>
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon-checkbox"><p:selectBooleanCheckbox /></span>
+            <p:inputText placeholder="Username" />        
+        </div>
+    </div>
+</div>
+                    
+                    
+                    
+                    
+                    
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+
