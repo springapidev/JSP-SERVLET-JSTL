@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UserEditDlg" widgetVar="UserEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditUserTitle}">
+            <h:form id="UserEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{userController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditUserLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{userController.selected.id}" title="#{bundle.EditUserTitle_id}" required="true" requiredMessage="#{bundle.EditUserRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditUserLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{userController.selected.email}" title="#{bundle.EditUserTitle_email}" />
+                        <p:outputLabel value="#{bundle.EditUserLabel_firstName}" for="firstName" />
+                        <p:inputText id="firstName" value="#{userController.selected.firstName}" title="#{bundle.EditUserTitle_firstName}" />
+                        <p:outputLabel value="#{bundle.EditUserLabel_gender}" for="gender" />
+                        <p:inputText id="gender" value="#{userController.selected.gender}" title="#{bundle.EditUserTitle_gender}" />
+                        <p:outputLabel value="#{bundle.EditUserLabel_lastName}" for="lastName" />
+                        <p:inputText id="lastName" value="#{userController.selected.lastName}" title="#{bundle.EditUserTitle_lastName}" />
+                        <p:outputLabel value="#{bundle.EditUserLabel_mobile}" for="mobile" />
+                        <p:inputText id="mobile" value="#{userController.selected.mobile}" title="#{bundle.EditUserTitle_mobile}" />
+                        <p:outputLabel value="#{bundle.EditUserLabel_regiDate}" for="regiDate" />
+                        <p:calendar id="regiDate" pattern="MM/dd/yyyy HH:mm:ss" value="#{userController.selected.regiDate}" title="#{bundle.EditUserTitle_regiDate}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditUserLabel_userName}" for="userName" />
+                        <p:inputText id="userName" value="#{userController.selected.userName}" title="#{bundle.EditUserTitle_userName}" required="true" requiredMessage="#{bundle.EditUserRequiredMessage_userName}"/>
+                        <p:outputLabel value="#{bundle.EditUserLabel_roleId}" for="roleId" />
+                        <p:inputText id="roleId" value="#{userController.selected.roleId}" title="#{bundle.EditUserTitle_roleId}" required="true" requiredMessage="#{bundle.EditUserRequiredMessage_roleId}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{userController.update}" value="#{bundle.Save}" update="display,:UserListForm:datalist,:growl" oncomplete="handleSubmit(args, 'UserEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UserEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

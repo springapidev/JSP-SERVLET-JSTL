@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AccountOpenCreateDlg" widgetVar="AccountOpenCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateAccountOpenTitle}">
+            <h:form id="AccountOpenCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{accountOpenController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{accountOpenController.selected.id}" title="#{bundle.CreateAccountOpenTitle_id}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_accountHolderName}" for="accountHolderName" />
+                        <p:inputText id="accountHolderName" value="#{accountOpenController.selected.accountHolderName}" title="#{bundle.CreateAccountOpenTitle_accountHolderName}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_accountHolderName}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_accountNumber}" for="accountNumber" />
+                        <p:inputText id="accountNumber" value="#{accountOpenController.selected.accountNumber}" title="#{bundle.CreateAccountOpenTitle_accountNumber}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_accountNumber}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_address}" for="address" />
+                        <p:inputText id="address" value="#{accountOpenController.selected.address}" title="#{bundle.CreateAccountOpenTitle_address}" />
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_balanceAmount}" for="balanceAmount" />
+                        <p:inputText id="balanceAmount" value="#{accountOpenController.selected.balanceAmount}" title="#{bundle.CreateAccountOpenTitle_balanceAmount}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_balanceAmount}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_bithDate}" for="bithDate" />
+                        <p:calendar id="bithDate" pattern="MM/dd/yyyy" value="#{accountOpenController.selected.bithDate}" title="#{bundle.EditAccountOpenTitle_bithDate}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{accountOpenController.selected.email}" title="#{bundle.CreateAccountOpenTitle_email}" />
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_gender}" for="gender" />
+                        <p:inputText id="gender" value="#{accountOpenController.selected.gender}" title="#{bundle.CreateAccountOpenTitle_gender}" />
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_mobile}" for="mobile" />
+                        <p:inputText id="mobile" value="#{accountOpenController.selected.mobile}" title="#{bundle.CreateAccountOpenTitle_mobile}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_mobile}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_nationalId}" for="nationalId" />
+                        <p:inputText id="nationalId" value="#{accountOpenController.selected.nationalId}" title="#{bundle.CreateAccountOpenTitle_nationalId}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_nationalId}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_openingDate}" for="openingDate" />
+                        <p:calendar id="openingDate" pattern="MM/dd/yyyy HH:mm:ss" value="#{accountOpenController.selected.openingDate}" title="#{bundle.EditAccountOpenTitle_openingDate}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_primaryDepositAmount}" for="primaryDepositAmount" />
+                        <p:inputText id="primaryDepositAmount" value="#{accountOpenController.selected.primaryDepositAmount}" title="#{bundle.CreateAccountOpenTitle_primaryDepositAmount}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_primaryDepositAmount}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_profession}" for="profession" />
+                        <p:inputText id="profession" value="#{accountOpenController.selected.profession}" title="#{bundle.CreateAccountOpenTitle_profession}" />
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_totalWithrawn}" for="totalWithrawn" />
+                        <p:inputText id="totalWithrawn" value="#{accountOpenController.selected.totalWithrawn}" title="#{bundle.CreateAccountOpenTitle_totalWithrawn}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_totalWithrawn}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountOpenLabel_acTypeId}" for="acTypeId" />
+                        <p:inputText id="acTypeId" value="#{accountOpenController.selected.acTypeId}" title="#{bundle.CreateAccountOpenTitle_acTypeId}" required="true" requiredMessage="#{bundle.CreateAccountOpenRequiredMessage_acTypeId}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{accountOpenController.create}" value="#{bundle.Save}" update="display,:AccountOpenListForm:datalist,:growl" oncomplete="handleSubmit(args,'AccountOpenCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AccountOpenCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

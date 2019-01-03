@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UserViewDlg" widgetVar="UserViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewUserTitle}">
+            <h:form id="UserViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{userController.selected != null}">
+                        <h:outputText value="#{bundle.ViewUserLabel_id}"/>
+                        <h:outputText value="#{userController.selected.id}" title="#{bundle.ViewUserTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewUserLabel_email}"/>
+                        <h:outputText value="#{userController.selected.email}" title="#{bundle.ViewUserTitle_email}"/>
+                        <h:outputText value="#{bundle.ViewUserLabel_firstName}"/>
+                        <h:outputText value="#{userController.selected.firstName}" title="#{bundle.ViewUserTitle_firstName}"/>
+                        <h:outputText value="#{bundle.ViewUserLabel_gender}"/>
+                        <h:outputText value="#{userController.selected.gender}" title="#{bundle.ViewUserTitle_gender}"/>
+                        <h:outputText value="#{bundle.ViewUserLabel_lastName}"/>
+                        <h:outputText value="#{userController.selected.lastName}" title="#{bundle.ViewUserTitle_lastName}"/>
+                        <h:outputText value="#{bundle.ViewUserLabel_mobile}"/>
+                        <h:outputText value="#{userController.selected.mobile}" title="#{bundle.ViewUserTitle_mobile}"/>
+                        <h:outputText value="#{bundle.ViewUserLabel_regiDate}"/>
+                        <h:outputText value="#{userController.selected.regiDate}" title="#{bundle.ViewUserTitle_regiDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewUserLabel_userName}"/>
+                        <h:outputText value="#{userController.selected.userName}" title="#{bundle.ViewUserTitle_userName}"/>
+                        <h:outputText value="#{bundle.ViewUserLabel_roleId}"/>
+                        <h:outputText value="#{userController.selected.roleId}" title="#{bundle.ViewUserTitle_roleId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="UserViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

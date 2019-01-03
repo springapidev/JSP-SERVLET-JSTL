@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="NomineeEditDlg" widgetVar="NomineeEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditNomineeTitle}">
+            <h:form id="NomineeEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{nomineeController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditNomineeLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{nomineeController.selected.id}" title="#{bundle.EditNomineeTitle_id}" required="true" requiredMessage="#{bundle.EditNomineeRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditNomineeLabel_dateOfBirth}" for="dateOfBirth" />
+                        <p:calendar id="dateOfBirth" pattern="MM/dd/yyyy HH:mm:ss" value="#{nomineeController.selected.dateOfBirth}" title="#{bundle.EditNomineeTitle_dateOfBirth}" required="true" requiredMessage="#{bundle.EditNomineeRequiredMessage_dateOfBirth}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditNomineeLabel_gender}" for="gender" />
+                        <p:inputText id="gender" value="#{nomineeController.selected.gender}" title="#{bundle.EditNomineeTitle_gender}" />
+                        <p:outputLabel value="#{bundle.EditNomineeLabel_mobile}" for="mobile" />
+                        <p:inputText id="mobile" value="#{nomineeController.selected.mobile}" title="#{bundle.EditNomineeTitle_mobile}" />
+                        <p:outputLabel value="#{bundle.EditNomineeLabel_nationalId}" for="nationalId" />
+                        <p:inputText id="nationalId" value="#{nomineeController.selected.nationalId}" title="#{bundle.EditNomineeTitle_nationalId}" />
+                        <p:outputLabel value="#{bundle.EditNomineeLabel_nomineeName}" for="nomineeName" />
+                        <p:inputText id="nomineeName" value="#{nomineeController.selected.nomineeName}" title="#{bundle.EditNomineeTitle_nomineeName}" required="true" requiredMessage="#{bundle.EditNomineeRequiredMessage_nomineeName}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{nomineeController.update}" value="#{bundle.Save}" update="display,:NomineeListForm:datalist,:growl" oncomplete="handleSubmit(args, 'NomineeEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="NomineeEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

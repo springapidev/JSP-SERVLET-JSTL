@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AccountOpenViewDlg" widgetVar="AccountOpenViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewAccountOpenTitle}">
+            <h:form id="AccountOpenViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{accountOpenController.selected != null}">
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_id}"/>
+                        <h:outputText value="#{accountOpenController.selected.id}" title="#{bundle.ViewAccountOpenTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_accountHolderName}"/>
+                        <h:outputText value="#{accountOpenController.selected.accountHolderName}" title="#{bundle.ViewAccountOpenTitle_accountHolderName}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_accountNumber}"/>
+                        <h:outputText value="#{accountOpenController.selected.accountNumber}" title="#{bundle.ViewAccountOpenTitle_accountNumber}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_address}"/>
+                        <h:outputText value="#{accountOpenController.selected.address}" title="#{bundle.ViewAccountOpenTitle_address}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_balanceAmount}"/>
+                        <h:outputText value="#{accountOpenController.selected.balanceAmount}" title="#{bundle.ViewAccountOpenTitle_balanceAmount}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_bithDate}"/>
+                        <h:outputText value="#{accountOpenController.selected.bithDate}" title="#{bundle.ViewAccountOpenTitle_bithDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_email}"/>
+                        <h:outputText value="#{accountOpenController.selected.email}" title="#{bundle.ViewAccountOpenTitle_email}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_gender}"/>
+                        <h:outputText value="#{accountOpenController.selected.gender}" title="#{bundle.ViewAccountOpenTitle_gender}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_mobile}"/>
+                        <h:outputText value="#{accountOpenController.selected.mobile}" title="#{bundle.ViewAccountOpenTitle_mobile}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_nationalId}"/>
+                        <h:outputText value="#{accountOpenController.selected.nationalId}" title="#{bundle.ViewAccountOpenTitle_nationalId}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_openingDate}"/>
+                        <h:outputText value="#{accountOpenController.selected.openingDate}" title="#{bundle.ViewAccountOpenTitle_openingDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_primaryDepositAmount}"/>
+                        <h:outputText value="#{accountOpenController.selected.primaryDepositAmount}" title="#{bundle.ViewAccountOpenTitle_primaryDepositAmount}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_profession}"/>
+                        <h:outputText value="#{accountOpenController.selected.profession}" title="#{bundle.ViewAccountOpenTitle_profession}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_totalWithrawn}"/>
+                        <h:outputText value="#{accountOpenController.selected.totalWithrawn}" title="#{bundle.ViewAccountOpenTitle_totalWithrawn}"/>
+                        <h:outputText value="#{bundle.ViewAccountOpenLabel_acTypeId}"/>
+                        <h:outputText value="#{accountOpenController.selected.acTypeId}" title="#{bundle.ViewAccountOpenTitle_acTypeId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="AccountOpenViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

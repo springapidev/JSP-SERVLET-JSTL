@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AccountNomineeCreateDlg" widgetVar="AccountNomineeCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateAccountNomineeTitle}">
+            <h:form id="AccountNomineeCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{accountNomineeController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateAccountNomineeLabel_accountNomineePK_accountId}" for="accountNomineePK_accountId" />
+                        <p:inputText id="accountNomineePK_accountId" value="#{accountNomineeController.selected.accountNomineePK.accountId}" title="#{bundle.CreateAccountNomineeTitle_accountNomineePK_accountId}" required="true" requiredMessage="#{bundle.CreateAccountNomineeRequiredMessage_accountNomineePK_accountId}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountNomineeLabel_accountNomineePK_nomineeId}" for="accountNomineePK_nomineeId" />
+                        <p:inputText id="accountNomineePK_nomineeId" value="#{accountNomineeController.selected.accountNomineePK.nomineeId}" title="#{bundle.CreateAccountNomineeTitle_accountNomineePK_nomineeId}" required="true" requiredMessage="#{bundle.CreateAccountNomineeRequiredMessage_accountNomineePK_nomineeId}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{accountNomineeController.create}" value="#{bundle.Save}" update="display,:AccountNomineeListForm:datalist,:growl" oncomplete="handleSubmit(args,'AccountNomineeCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AccountNomineeCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

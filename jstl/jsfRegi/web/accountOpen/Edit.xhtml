@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AccountOpenEditDlg" widgetVar="AccountOpenEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditAccountOpenTitle}">
+            <h:form id="AccountOpenEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{accountOpenController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{accountOpenController.selected.id}" title="#{bundle.EditAccountOpenTitle_id}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_accountHolderName}" for="accountHolderName" />
+                        <p:inputText id="accountHolderName" value="#{accountOpenController.selected.accountHolderName}" title="#{bundle.EditAccountOpenTitle_accountHolderName}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_accountHolderName}"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_accountNumber}" for="accountNumber" />
+                        <p:inputText id="accountNumber" value="#{accountOpenController.selected.accountNumber}" title="#{bundle.EditAccountOpenTitle_accountNumber}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_accountNumber}"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_address}" for="address" />
+                        <p:inputText id="address" value="#{accountOpenController.selected.address}" title="#{bundle.EditAccountOpenTitle_address}" />
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_balanceAmount}" for="balanceAmount" />
+                        <p:inputText id="balanceAmount" value="#{accountOpenController.selected.balanceAmount}" title="#{bundle.EditAccountOpenTitle_balanceAmount}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_balanceAmount}"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_bithDate}" for="bithDate" />
+                        <p:calendar id="bithDate" pattern="MM/dd/yyyy" value="#{accountOpenController.selected.bithDate}" title="#{bundle.EditAccountOpenTitle_bithDate}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{accountOpenController.selected.email}" title="#{bundle.EditAccountOpenTitle_email}" />
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_gender}" for="gender" />
+                        <p:inputText id="gender" value="#{accountOpenController.selected.gender}" title="#{bundle.EditAccountOpenTitle_gender}" />
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_mobile}" for="mobile" />
+                        <p:inputText id="mobile" value="#{accountOpenController.selected.mobile}" title="#{bundle.EditAccountOpenTitle_mobile}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_mobile}"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_nationalId}" for="nationalId" />
+                        <p:inputText id="nationalId" value="#{accountOpenController.selected.nationalId}" title="#{bundle.EditAccountOpenTitle_nationalId}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_nationalId}"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_openingDate}" for="openingDate" />
+                        <p:calendar id="openingDate" pattern="MM/dd/yyyy HH:mm:ss" value="#{accountOpenController.selected.openingDate}" title="#{bundle.EditAccountOpenTitle_openingDate}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_primaryDepositAmount}" for="primaryDepositAmount" />
+                        <p:inputText id="primaryDepositAmount" value="#{accountOpenController.selected.primaryDepositAmount}" title="#{bundle.EditAccountOpenTitle_primaryDepositAmount}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_primaryDepositAmount}"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_profession}" for="profession" />
+                        <p:inputText id="profession" value="#{accountOpenController.selected.profession}" title="#{bundle.EditAccountOpenTitle_profession}" />
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_totalWithrawn}" for="totalWithrawn" />
+                        <p:inputText id="totalWithrawn" value="#{accountOpenController.selected.totalWithrawn}" title="#{bundle.EditAccountOpenTitle_totalWithrawn}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_totalWithrawn}"/>
+                        <p:outputLabel value="#{bundle.EditAccountOpenLabel_acTypeId}" for="acTypeId" />
+                        <p:inputText id="acTypeId" value="#{accountOpenController.selected.acTypeId}" title="#{bundle.EditAccountOpenTitle_acTypeId}" required="true" requiredMessage="#{bundle.EditAccountOpenRequiredMessage_acTypeId}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{accountOpenController.update}" value="#{bundle.Save}" update="display,:AccountOpenListForm:datalist,:growl" oncomplete="handleSubmit(args, 'AccountOpenEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AccountOpenEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

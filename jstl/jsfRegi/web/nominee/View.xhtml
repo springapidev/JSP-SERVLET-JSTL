@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="NomineeViewDlg" widgetVar="NomineeViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewNomineeTitle}">
+            <h:form id="NomineeViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{nomineeController.selected != null}">
+                        <h:outputText value="#{bundle.ViewNomineeLabel_id}"/>
+                        <h:outputText value="#{nomineeController.selected.id}" title="#{bundle.ViewNomineeTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewNomineeLabel_dateOfBirth}"/>
+                        <h:outputText value="#{nomineeController.selected.dateOfBirth}" title="#{bundle.ViewNomineeTitle_dateOfBirth}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewNomineeLabel_gender}"/>
+                        <h:outputText value="#{nomineeController.selected.gender}" title="#{bundle.ViewNomineeTitle_gender}"/>
+                        <h:outputText value="#{bundle.ViewNomineeLabel_mobile}"/>
+                        <h:outputText value="#{nomineeController.selected.mobile}" title="#{bundle.ViewNomineeTitle_mobile}"/>
+                        <h:outputText value="#{bundle.ViewNomineeLabel_nationalId}"/>
+                        <h:outputText value="#{nomineeController.selected.nationalId}" title="#{bundle.ViewNomineeTitle_nationalId}"/>
+                        <h:outputText value="#{bundle.ViewNomineeLabel_nomineeName}"/>
+                        <h:outputText value="#{nomineeController.selected.nomineeName}" title="#{bundle.ViewNomineeTitle_nomineeName}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="NomineeViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

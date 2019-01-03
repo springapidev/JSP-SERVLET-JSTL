@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AccountNomineeViewDlg" widgetVar="AccountNomineeViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewAccountNomineeTitle}">
+            <h:form id="AccountNomineeViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{accountNomineeController.selected != null}">
+                        <h:outputText value="#{bundle.ViewAccountNomineeLabel_accountNomineePK_accountId}"/>
+                        <h:outputText value="#{accountNomineeController.selected.accountNomineePK.accountId}" title="#{bundle.ViewAccountNomineeTitle_accountNomineePK_accountId}"/>
+                        <h:outputText value="#{bundle.ViewAccountNomineeLabel_accountNomineePK_nomineeId}"/>
+                        <h:outputText value="#{accountNomineeController.selected.accountNomineePK.nomineeId}" title="#{bundle.ViewAccountNomineeTitle_accountNomineePK_nomineeId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="AccountNomineeViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
