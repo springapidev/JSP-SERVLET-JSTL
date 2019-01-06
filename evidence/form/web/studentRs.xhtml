@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <f:facet name="header">
+                        <h:outputText value="Data Display"></h:outputText>
+                    </f:facet>
+                    
+                    <h:outputLabel>Id :</h:outputLabel>
+                    <h:outputText value="#{studentController.student.id}"></h:outputText>
+                    
+                    <h:outputLabel>Name :</h:outputLabel>
+                    <h:outputText value="#{studentController.student.name}"></h:outputText>
+                    
+                    <h:outputLabel>Gender :</h:outputLabel>
+                    <h:outputText value="#{studentController.student.gender}"></h:outputText>
+                    
+                    <h:outputLabel>Round :</h:outputLabel>
+                    <h:outputText value="#{studentController.student.round}"></h:outputText>
+                    
+                    <h:outputLabel>Password :</h:outputLabel>
+                    <h:outputText value="#{studentController.student.password}"></h:outputText>
+                    
+                    <h:outputLabel>Hobby :</h:outputLabel>
+                    <h:outputText value="#{studentController.student.hobby}"></h:outputText>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

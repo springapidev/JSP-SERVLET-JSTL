@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h:panelGrid columns="2" styleClass="ht">
+                    <f:facet name="header">
+                        <h:outputText value="Data Display Form"></h:outputText>
+                    </f:facet>
+                    <h:outputLabel>Id :</h:outputLabel>
+                    <h:inputText value="#{studentController.student.id}"></h:inputText>
+                    
+                    <h:outputLabel>Name :</h:outputLabel>
+                    <h:inputText value="#{studentController.student.name}"></h:inputText>
+                    
+                    <h:outputLabel>Gender :</h:outputLabel>
+                    <h:selectOneRadio layout="lineDirection" value="#{studentController.student.gender}">
+                        <f:selectItem itemValue="Male" itemLabel="Male"></f:selectItem>
+                        <f:selectItem itemValue="Female" itemLabel="Female"></f:selectItem>
+                    </h:selectOneRadio>
+                    
+                    <h:outputLabel>Round :</h:outputLabel>
+                    <h:selectOneMenu value="#{studentController.student.round}">
+                        <f:selectItem itemValue="" itemLabel="Select A Round"></f:selectItem>
+                        <f:selectItem itemValue="36" itemLabel="Round-36"></f:selectItem>
+                        <f:selectItem itemValue="37" itemLabel="Round-37"></f:selectItem>
+                        <f:selectItem itemValue="38" itemLabel="Round-38"></f:selectItem>
+                        <f:selectItem itemValue="39" itemLabel="Round-39"></f:selectItem>
+                        <f:selectItem itemValue="40" itemLabel="Round-40"></f:selectItem>
+                    </h:selectOneMenu>
+                    
+                    <h:outputLabel>Email :</h:outputLabel>
+                    <h:inputText value="#{studentController.student.email}"></h:inputText>
+                    
+                    <h:outputLabel>Password :</h:outputLabel>
+                    <h:inputText value="#{studentController.student.password}"></h:inputText>
+                    
+                    <h:outputLabel>Hobby :</h:outputLabel>
+                    <h:selectManyCheckbox value="#{studentController.student.hobby}">
+                        <f:selectItem itemValue="Reading" itemLabel="Reading"></f:selectItem>
+                        <f:selectItem itemValue="Writting" itemLabel="Writting"></f:selectItem>
+                        <f:selectItem itemValue="Coading" itemLabel="Coading"></f:selectItem>
+                    
+                    </h:selectManyCheckbox>
+                    
+                    <h:commandButton value="Submit" action="submit"></h:commandButton>
+                    <h:commandButton value="Reset" action="#{studentController.reset()}"></h:commandButton>
+                </h:panelGrid>  
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
