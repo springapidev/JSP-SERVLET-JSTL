@@ -6,14 +6,20 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
+        <f:metadata>  
+<!--             <f:viewParam id="studentID" name="studentID" value="#{studentbean.student.id}"/>-->
+        </f:metadata>  
     </h:head>
     <h:body>
 
-      
+
         Hello from Facelets
         <h:form id="form1">
             ID <h:inputText value="#{studentbean.student.id}" /><br/>
-            <p:commandButton action="#{studentbean.searchById()}" value="Search" update=":form2" />
+            <p:commandButton action="#{studentbean.searchById()}" value="Search"   update=":form2" >
+                <f:setPropertyActionListener target="#{studentbean.student}" value="#{student}"/>
+
+            </p:commandButton>
         </h:form>
         <br/>
         <br/>

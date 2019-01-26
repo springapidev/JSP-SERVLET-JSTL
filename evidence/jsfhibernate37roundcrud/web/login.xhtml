@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>login</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+
+        <div class="container">
+            <h:form>
+                <p:growl showSummary="true"/>
+                <h3>JSF Login </h3>
+                <div class="form-group">
+                    <h:outputText value="Username" />
+                    <h:inputText required="true" class="form-control" id="username" value="#{login.student.username}"></h:inputText>
+                    <h:message for="username"></h:message>
+                </div>
+                <div class="form-group">
+
+                    <h:outputText value="Password" />
+                    <h:inputSecret required="true" class="form-control" id="password" value="#{login.student.password}"></h:inputSecret>
+                    <h:message for="password"></h:message>
+                </div>
+
+                <h:commandButton class="form-control btn btn-info" action="#{login.validateUsernamePassword}"
+                                 value="Login"></h:commandButton>
+            </h:form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <a href="http://localhost:8081/jsfhibernate37roundcrud/faces/regi.xhtml">Signup</a>
+    </h:body>
+</html>
