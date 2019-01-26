@@ -11,15 +11,20 @@
 
         Hello from Facelets
         <h:form>
-            Username <h:inputText value="#{studentbean.student.username}" /><br/>
-            Password: <h:inputText value="#{studentbean.student.password}" /><br/>
-            Name: <h:inputText value="#{studentbean.student.name}" /><br/>
+            Username <h:inputText id="username" value="#{studentbean.student.username}" required="true" requiredMessage="Enter Username............"/>
+            <p:message for="username" />    
+
+            <br/>
+            Password: <h:inputText value="#{studentbean.student.password}" id="password" required="true" requiredMessage="Enter Password========"/>  <p:message for="password" />    <br/>
+            Name: <h:inputText value="#{studentbean.student.name}" required="true" id="n" requiredMessage="Enter Name"/>
+            <p:message for="n" />  <br/>
             Round:
-            <h:selectOneMenu value = "#{studentbean.student.round}"> 
+            <h:selectOneMenu required="true" id="round" value = "#{studentbean.student.round}"> 
                 <f:selectItem itemValue = "Round 36" itemLabel = "Round 36" /> 
                 <f:selectItem itemValue = "Round 37" itemLabel = "Round 37" /> 
                 <f:selectItem itemValue = "Round 38" itemLabel = "Round 38" /> 
-            </h:selectOneMenu> 	<br/>
+            </h:selectOneMenu>
+            <p:message for="round" />   	<br/>
 
             Course Completed:
             <h:selectManyCheckbox value="#{studentbean.courseCompleted}">
