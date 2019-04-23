@@ -1,0 +1,109 @@
+1. [CHAPTER-2-1] In JEE what happened when web container exeute JSP   
+
+a) jsp to Serverlet code
+b) jsp to HTML 
+c) implementation servlete
+Answer: b,c
+
+2. [CHAPTER-2-2] All classes of javax.servlet package are provide    
+
+a) provides the contruct between servlet or web application and the web container
+b) provides the contruct between GUI and the web container
+c) implementation servlete
+Answer: a
+
+3. [CHAPTER-2-3] javax.servlet.Servlet interface is the centre package which define      
+
+a) provides the contruct between servlet or web application and the web container
+b) provides the contruct between GUI and the web container
+c) core funcnality of all servlets
+Answer: c
+
+4. [CHAPTER-2-4] why do you use Servlet      
+
+a) Mantainability
+b) Resability
+c) core funcnality of all servlets
+Answer: a,b
+
+5. [CHAPTER-2-5] The web container implements the following       
+
+a) ServletConfig
+b) HTTPServletResponse
+c) RequestDispatcher
+Answer: a,c
+
+6. [CHAPTER-2-6]  The web application developer use implements the following       
+
+a) Servlet
+b) ServletResponse
+c) Filter
+Answer: a,c
+ 
+7. [CHAPTER-2-7]  The Servlet interface has licycle methods  the following     
+
+a) Init()
+b) Service
+c) Destroy()
+d) getServlerinfo()
+Answer: a,b,c
+
+8. [CHAPTER-2-8]  The service() throws the following    
+
+a) IOEXception,ServletExecption
+b) HTTPexception
+c) nothing
+Answer: a
+
+9. [CHAPTER-2-9]  RequestDespatcher method  are  following     
+
+a) self
+b) forward()
+c) include()
+d) getServlerinfo()
+Answer: b,c
+
+10. [CHAPTER-2-10] Basic Servlet defined by the class      
+
+a) HttpServlet
+b) FacesServlet
+c) GanaricServlet
+Answer: c
+
+11. [CHAPTER-2-11] To use servlet define tag in web.xml       
+
+a) servlet
+b) include
+c) servlet-Mapping
+Answer: a,c
+
+12. [CHAPTER-2-12] To use log method for       
+
+a) Application log
+b) web server log
+c) jsp log
+Answer: b
+
+13. [CHAPTER-2-13] To use HttpServlet produce responsed by        
+
+a) doPost()
+b) doGet()
+c) getPost
+Answer: a,b
+
+14. [CHAPTER-2-14] setContentType() is a method of        
+
+a) HttpRequest
+b) HttpResponse
+c) servlet
+Answer: b
+
+15. [CHAPTER-2-15] deployment descriptor is the addition of several JSP configuration
+elements inside a <jsp-config> element		      
+
+a) Enable or disable EL evaluation
+b) Enable or disable scripting elements
+c) Indicate page-encoding information
+d) Automatically include preludes and codas
+Answer: a,b,c,d
+ 

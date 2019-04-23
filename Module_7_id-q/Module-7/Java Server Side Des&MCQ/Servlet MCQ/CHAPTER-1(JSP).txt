@@ -1,0 +1,254 @@
+1. [CHAPTER-1-1] JEE 5 has two different but complementary technologeies which is not 
+
+a) Servlet
+b) context 
+c) JSP
+
+Answer: b
+ 
+2. [CHAPTER-1-2] JSP technology produce dynamic web content by  
+
+a) content to Servlet
+b) context to logic
+c) logic to content 
+
+Answer: c
+
+3. [CHAPTER-1-3] Which term is used as custom web-server extensions
+
+a) Servlet
+b) JSF 
+c) JSP
+
+Answer: a
+
+4. [CHAPTER-1-4] Servlet produce dynamic web content request by request
+by useing 
+
+a) request send by TCP/IP
+b) protocal independent manner
+c) responset used by HTML,XML,and so on
+
+Answer: b,c 
+
+5. [CHAPTER-1-5] who handle A request by jsp
+
+a) By Application server
+b) By Webserver 
+c) JSP Container
+
+Answer: b 
+
+6. [CHAPTER-1-6] The JSP Life cycle which is not state
+
+a) isThreadSafe=true
+b) Translation,initialization,Excution finalization
+c) Translation,Excution finalization
+
+Answer: a
+ 	
+7. [CHAPTER-1-7] The JSP Life cycle state Execute which method maybe overloaded
+
+a) JspInit()
+b) JspService()
+c) JspDestroy()
+
+Answer: b 
+ 	
+8. [CHAPTER-1-8] The JSP is not aiding reusablity  by
+
+a) JavaBean
+b) customtags
+c) jstl
+d) uri
+
+Answer: d
+
+9. [CHAPTER-1-9] Model 1 Architecture suprot
+
+a) Servlet
+b) JavaBean
+c) page-centric
+
+Answer: c 
+
+10. [CHAPTER-1-10] Model 2 Architectures suport MVC following banefits over model 1 architectures
+
+a) Maintainability
+b) Security
+c) page-centric
+d) Extensibility
+
+Answer: a,b,d
+
+11. [CHAPTER-1-11] Basic Deployment sturcture of wep application are
+
+a) jar
+b) war
+c) Expanded dirctory format
+
+Answer: b,c
+ 
+12. [CHAPTER-1-12] Basic Deployment folder in web container of Tomcat
+
+a) lib
+b) WEB-INF
+c) wabapps
+
+Answer: c
+ 
+13. [CHAPTER-1-13] Deployment descriptor web.xml is placed on
+
+a) META-INF
+b) Configaration
+c) WEB-INF
+
+Answer: c
+
+14. [CHAPTER-1-14] Jsp programming logic are classified by-
+
+a) El
+b) Scripting element
+c) directives
+D) Action element
+
+Answer: b,c,d
+
+15. [CHAPTER-1-15] Non-jsp are call-
+
+a) JSF
+b) TLD
+c) Templete Text
+
+Answer: c
+
+16. [CHAPTER-1-16] Comment placed by
+
+a) &lt!--   --&gt
+b) &lt%-- --%&gt
+c) &lt%=  =%&gt
+
+Answer: b
+
+17. [CHAPTER-1-17] JSP Implicit Objects are  
+
+a) request
+b) resonse
+c) exception
+d) web.xml
+
+Answer: a,b,c
+ 
+18. [CHAPTER-1-18] JSP Directives  are  
+
+a) request
+b) page
+c) include
+d) taglib
+
+Answer: b,c,d
+
+19. [CHAPTER-1-19] taglib have many attribute.which is must   
+
+a) uri
+b) tagdir
+c) prefix
+
+Answer: c
+
+20. [CHAPTER-1-20] JSP Action element are   
+
+a) Standar 
+b) Custom 
+c) JSTL
+d) taglib
+
+Answer: a,b,c
+
+21. [CHAPTER-1-21] JStL Action element are-   
+
+a) Standar 
+b) Custom 
+c) sql
+d) core
+
+Answer: c,d
+
+22. [CHAPTER-1-22] Jsp:UseBean Action element has Id .Id represend-    
+
+a) variable 
+b) id
+c) scope
+d) el
+
+Answer: a
+
+23. [CHAPTER-1-23] Which Declarations are valid in jsp page?
+
+a.<%! declaration; [declaration;]+...%>
+b.<%! declaration; (declaration;)+...%>
+c.<%! private int calculate(int a, int b){}%>
+d.<%  private int calculate[int a, int b]{}%>
+
+ ans: a,c
+
+24. [CHAPTER-1-24] Which Scriptlets are produce dynamic output?
+
+a.<% User user = (user) request.getAttribute("User");
+	if (User != null ) {
+			%> Welcome, you have successfully logged in ! <% } %>
+b.<% User user = (User) request.getAttribute("User");
+	if (user != null ) {
+		%> Welcome, you have successfully logged in ! <% } %>
+c.<% User user = (User) request.setAttribute("User");
+	if (user != null ) {
+		%> Welcome, you have successfully logged in ! <% } %>
+d.<% User user = (User) Session.getAttribute("User");
+	if (user != null ) {
+		%> Welcome, you have successfully logged in ! <% } %>
+
+ ans: b
+
+25. [CHAPTER-1-25] Which files are created by using the %JAVA_HOME%\bin\jar.exe utility?
+
+a. URI
+b. JAR
+c. Tag
+
+ans: b
+
+26. [CHAPTER-1-26] Tag files are special JSP files that end with the following
+
+1. suffix.tag or .tags
+2. suffix.tag.tagx
+3. suffix.tag or.tagx
+
+ ans: c
+
+27. [CHAPTER-1-27] Which of the following called deployment Descriptor?
+
+1. index.jsp 
+2. web.xml
+
+ ans: b
+
+28. [CHAPTER-1-28] Which one is describe the tag library?
+
+a. WEB-INF\tlds\myTaglib.tlds
+b. WEB-INF\tlds\myTaglib.jsp
+c. WEB-INF\tlds\myTaglib.tld
+
+ ans: c
+
+29. [CHAPTER-1-29] who are not capable to execute java code which language help them in jsp page:
+  
+a.jstl
+b.EL Expression
+c.custom.
+b.servlet
+
+ ans:a,b,c
+
+29. [CHAPTER-1-29] When page directives called is threadSafe to false it's indicate?
+a.SingleThreadModel interface.
+b.multiplethreadModel interface

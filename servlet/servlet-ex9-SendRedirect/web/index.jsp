@@ -13,5 +13,9 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <form action="MyGoogleSearcher">
+            <input type="text" name="para"/>
+            <input type="submit" value="Search"/>
+        </form>
     </body>
 </html>

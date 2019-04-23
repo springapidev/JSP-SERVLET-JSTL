@@ -19,7 +19,7 @@ package com.coderbd;
         PrintWriter out = response.getWriter();  
               
         String n=request.getParameter("userName");  
-        out.print("Welcome "+n);  
+        out.print("Welcome........... "+n);  
         }  
       
     }  

@@ -14,7 +14,6 @@
     <body>
         <h1>Hello World!</h1>
         <!--Declaration Tag--->
-          <!--Jsp scriptlet tag  <%= new java.util.Date() %> -->
         <%!
             String fname = "Md";
             String lname = "BD";
@@ -25,6 +24,7 @@
         <%
             out.println("Last name: " + lname);
         %>
+         <!--Scriplet Tag--->
         <%
             int x = 10;
             int y = 5;

@@ -31,7 +31,7 @@ public class MyGoogleSearcher extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String name=request.getParameter("name");  
+       String name=request.getParameter("para");  
         response.sendRedirect("https://www.google.co.in/#q="+name);  
     }
 

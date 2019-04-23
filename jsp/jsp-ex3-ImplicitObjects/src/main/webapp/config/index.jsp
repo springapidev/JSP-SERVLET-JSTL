@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <form action="welcome">  
+        <form action="/jsp-ex3-ImplicitObjects/ww">  
             <input type="text" name="uname">  
             <input type="submit" value="go"><br/>  
         </form>  

@@ -1,0 +1,115 @@
+1. [CHAPTER-4-1] To be able to use the JSTL, you must have the following:
+
+a) At least a Servlet 2.3– and JSP 1.2–compliant container
+b) Scriplets
+c) An implementation of the JSTL specification
+Answer: a,c
+
+2. [CHAPTER-4-2] the JSTL implementation,There are two JAR files
+
+a) jstl.jar,standard.jar
+b) c.ltd,x.tld
+c) jstl.ltd,standard.tld 
+Answer: a
+
+3. [CHAPTER-4-3] JSTL May be use the following TLD file 
+ 
+a) c.tld
+b) x.tld
+c) fmt.tld
+Answer: a,b,c
+
+4. [CHAPTER-4-4] put JSTL lib on the web applicat 
+  
+a) WEB-INF/lib
+b) lib
+c) common/lib on container home path
+Answer: a,c
+
+5. [CHAPTER-4-5] The JSTL is often referred to as a single tag library when in fact it’s a 
+   collection of four tag libraries
+
+a) i18n
+b) Core
+c) JPA
+Answer: a,b
+
+6. [CHAPTER-4-6] which one is equal output to The <c:out> Action
+ 
+a) ${}
+b) getmethod of bean
+c) &lt%= %&gt
+Answer: a,c
+
+7. [CHAPTER-4-7] which one is the correct include core jstl library
+
+a) &lt%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %&gt
+b) &lt%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt
+c) &lt%@ taglib uri="http://java.sun.com/jsf/core" prefix="c" %&gt
+Answer: b 
+	
+8. [CHAPTER-4-8] The &ltc:catch&gt action provides a simple mechanism for catching any
+
+a) java.lang.Throwable
+b) java.lang.Erron
+c) java.lang.Execption
+Answer: a 
+	
+9. [CHAPTER-4-9] The &ltc:if&gt Actionws has a mandatory attribute
+
+a) id
+b) var
+c) test
+Answer: c
+
+10. [CHAPTER-5-10] We use if -else if -else by the core tag ,which one is true
+  
+a) &ltc:if&gt&ltc:if&gt&ltc:else&gt&lt/c:else&gt
+b) &ltc:choose&gt&ltc:when&gt ... &ltc:otherwise&gt &lt/c:choose&gt
+c) &ltc:when&gt...&lt/c:when&gt
+Answer: b 
+
+11. [CHAPTER-5-11] The <c:forEach> action is probably one of the most useful actions provided 
+    by the JSTL thatenables its body content to be processed a number of times.item attribute are 
+    not takeing referrence of  
+
+a) Array
+b) dataSource
+c) A string of comma-separated values
+Answer: b
+ 
+12. [CHAPTER-5-12] The Internationalization and Formatting tag library provides actions that
+    allow you to control the - settings for your JSP pages
+  
+a) Date
+b) Locale
+c) Time 
+Answer: b 
+
+13. [CHAPTER-5-13] the SQL tag library operate on a data source defined by the
+
+a) javax.servlet.jsp.jstl.sql.DataSource
+b) InitContext
+c) java.sql.DataSource 
+Answer: c 
+
+14. [CHAPTER-5-14] An optional isolation attribute can also be supplied to set the isolation
+    level of the transaction. This attribute must be one of the following values
+
+a) read_committed
+b) read_uncommitted
+c) cycle_read
+d) serializable
+Answer: a,b,d
+
+15. [CHAPTER-5-15] the XML transformation actions provided by the JSTL are designed to apply 
+    an XSLT stylesheet to an XML document <x:transform xml="${books}" xslt="${xslt}"/> 
+
+a) xml is a style doc
+b) xslt is main doc
+c) xslt is style doc
+Answer: c
+
+ 	 
+ 	
+		 

@@ -1,0 +1,73 @@
+1. [CHAPTER-3-1] do. This language is far simpler to understand than Java and looks very similar
+   to JavaScript.The following are good reasons for
+
+a) JavaScript is something that most page authors are already familiar with
+b) by the use of scriptlets is that of maintainability
+c) The EL is inspired by ECMAScript, which is the standardized version of JavaScript
+Answer: a,c
+
+2. [CHAPTER-3-2] No matter where the EL is used, it’s always invoked in a consistent manner
+
+a) #{}
+b) ${}
+c) param['exp']
+Answer: a,b
+
+3. [CHAPTER-3-3] You can use the EL in the same places as you would have used a scriptlet,
+   for example:
+
+a) Within attribute values for JSP standard and custom tags
+b) Within template text (that is, in the body of the page)
+c) properties of bean class
+Answer: a,b
+
+4. [CHAPTER-3-4] When El fail to produce any value as
+ 
+a) throw execption
+b) show errpr
+c) Default value
+Answer: c
+
+5. [CHAPTER-3-5] the JSP EL has many words that are reserved.following
+ 
+a) ne
+b) or
+c) empty
+Answer: b 
+
+6. [CHAPTER-3-6] How do you disable el for folder which contain some web pages
+
+a) &lturl-pattern&gt*.jsp&lt/url-pattern&gt&ltscripting-invalid&gtfalse&lt/scripting-invalid&gt
+b) &lturl-pattern&gt*&lt/url-pattern&gt&ltscripting-invalid&gtfalse&lt/scripting-invalid&gt
+c) &lturl-pattern&gt/noscriptlets/&lt/url-pattern&gt&ltscripting-invalid&gttrue&lt/scripting-invalid&gt
+Answer: c 
+ 	
+7. [CHAPTER-3-7] You can disable EL evaluation in two ways
+
+a) Individually on each page by using the page directive
+b) Within the context.xml file by using a JSP configuration element
+c) Within the web.xml file by using a JSP configuration element
+Answer: a,c 
+	
+8. [CHAPTER-3-8] The logical operators are as follows
+
+a) or
+b) not
+c) =
+Answer: a,b
+
+9. [CHAPTER-3-9] An EL function is mapped to a static method of a Java class.This mapping is 
+   specified within a tag library descriptor (TLD).which is true of the following
+
+a) Class must be public
+b) method must be nonstatic
+c) el function take any args 
+Answer: a,c 
+
+10. [CHAPTER-3-10] the JSP 2.0 specification introduced an expression language (EL) that can do 
+    pretty much everything that scriptlets can do.good reasons for this similarity		      
+
+a) JavaScript is something that most page authors are already familiar with
+b) Enable or disable scripting elements
+c) The EL is inspired by ECMAScript, which is the standardized version of JavaScript
+Answer: a,c

@@ -19,7 +19,6 @@ public class AdminServlet extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-
         out.print("welcome ADMIN");
         out.close();
     }

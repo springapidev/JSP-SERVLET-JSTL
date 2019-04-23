@@ -24,6 +24,7 @@
         <%
             out.println("Last name: " + lname);
         %>
+         <!--Scriplet Tag--->
         <%
             int x = 10;
             int y = 5;
