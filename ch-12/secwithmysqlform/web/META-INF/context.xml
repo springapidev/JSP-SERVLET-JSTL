@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/sec3"  docBase="sec3" 
+<Context path="/secwithmysqlform" docBase="secwithmysqlform" 
          debug="99">
   <Realm className="org.apache.catalina.realm.JDBCRealm"
          connectionName="root"
